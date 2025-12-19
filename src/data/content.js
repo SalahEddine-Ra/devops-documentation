@@ -638,13 +638,321 @@ export const sections = [
   {
     id: 'ci-cd-deep',
     category: 'Outils et Automatisation',
-    title: 'CI/CD Approfondi',
+    title: 'Intégration Continue (CI)',
     timing: '2h',
     icon: Server,
     content: `
-      <div class="flex flex-col items-center justify-center h-64 text-gray-400">
-        <h2 class="text-2xl font-bold mb-2">Contenu à venir...</h2>
-        <p>Cette section sera dédiée à l'approfondissement du CI/CD.</p>
+      <h2 class="text-3xl font-bold mb-6 text-indigo-700">L'Intégration Continue (CI) – Construire et Tester</h2>
+
+      <!--Introduction -->
+      <div class="bg-white p-6 rounded-lg shadow-md mb-8 border-l-4 border-indigo-500">
+        <h3 class="text-xl font-semibold mb-3 text-gray-800">Introduction : Le Scénario du "Merge Day"</h3>
+        <p class="mb-4 text-gray-700 italic">
+          Imaginez ce scénario classique : Vous travaillez sur une fonctionnalité depuis deux semaines. Le vendredi soir, vous décidez d'envoyer votre code sur la branche principale (Main). Et là... C'est le drame.
+        </p>
+        <p class="mb-4 text-gray-700">
+          Votre code casse tout. L'application ne démarre plus. Vos collègues sont bloqués. C'est ce qu'on appelle <strong>"l'Enfer de l'Intégration"</strong>.
+        </p>
+        <p class="text-gray-700">
+          Pour éviter cela, les équipes modernes utilisent le Feature Branch Workflow combiné à un gardien impitoyable : <strong>L'Intégration Continue</strong>.
+        </p>
+      </div>
+
+      <!--Qu'est-ce que la CI -->
+      <h3 class="text-2xl font-bold mb-4 text-gray-800">Qu'est-ce que l'Intégration Continue (CI) ?</h3>
+      <p class="mb-4 text-gray-700">
+        L'Intégration Continue est une pratique où les développeurs fusionnent leurs modifications de code dans un dépôt central (GitHub/GitLab) plusieurs fois par jour.
+      </p>
+      <ul class="list-disc list-inside bg-gray-50 p-4 rounded-lg text-gray-700 space-y-2 mb-8">
+        <li><strong>Le Concept :</strong> Automatiser la validation de chaque petit changement.</li>
+        <li><strong>L'Objectif :</strong> Le "Fail Fast" (Échouer vite). Si une erreur existe, nous voulons le savoir dans les 5 minutes via une notification automatique.</li>
+      </ul>
+
+      <!-- La Pyramide des Tests -->
+
+<h3 class="text-2xl font-bold mb-4 text-gray-800">
+  La Stratégie de Qualité : La Pyramide des Tests
+</h3>
+
+<p class="mb-6 text-gray-600">
+  Principe clé : plus un test est bas dans la pyramide, plus il doit être
+  <strong>nombreux</strong>, <strong>rapide</strong> et <strong>automatique</strong>.
+  <br />
+  En CI, on ne cherche pas à tout tester partout, mais à détecter les erreurs
+  le plus tôt possible, au coût le plus faible.
+</p>
+
+<div class="space-y-6 mb-8">
+
+  <!-- Analyse Statique & Linting -->
+  <div class="bg-blue-50 p-4 rounded-lg border-l-4 border-blue-500">
+    <h4 class="font-bold text-blue-800 text-lg">
+      1. Analyse Statique & Linting — le filtre d’entrée
+    </h4>
+
+    <p class="text-sm text-gray-700 mt-2">
+      Ici, le code n’est pas exécuté. On analyse uniquement le texte du code
+      pour vérifier qu’il respecte les règles techniques de base.
+    </p>
+
+    <ul class="list-disc list-inside mt-3 text-sm text-gray-600 space-y-1">
+      <li>Détecte les erreurs évidentes : variables inutilisées, imports morts.</li>
+      <li>Vérifie le style et la lisibilité du code.</li>
+      <li>Repère des vulnérabilités simples et du code trop complexe.</li>
+      <li>Très rapide : quelques secondes seulement.</li>
+    </ul>
+
+    <p class="text-sm text-gray-700 mt-3">
+      Règle claire en CI : <strong>si le lint échoue, le pipeline s’arrête</strong>.
+      Ce n’est pas du cosmétique, c’est une vraie barrière de qualité technique.
+    </p>
+  </div>
+
+  <!-- Tests Unitaires -->
+  <div class="bg-green-50 p-4 rounded-lg border-l-4 border-green-500">
+    <h4 class="font-bold text-green-800 text-lg">
+      2. Tests Unitaires — le socle de la qualité
+    </h4>
+
+    <p class="text-sm text-gray-700 mt-2">
+      Les tests unitaires vérifient une seule fonction ou méthode, en isolation
+      totale, sans base de données, sans réseau et sans API externe.
+    </p>
+
+    <p class="text-sm text-gray-700 mt-2">
+      Exemple simple : <code class="bg-gray-100 px-1 rounded">calculerTTC(100)</code>
+      doit retourner <strong>120</strong>.
+    </p>
+
+    <ul class="list-disc list-inside mt-3 text-sm text-gray-600 space-y-1">
+      <li>Valident la logique métier et les règles de calcul.</li>
+      <li>Attrapent la majorité des bugs.</li>
+      <li>Ultra rapides et exécutés à chaque push.</li>
+      <li>Faciles à comprendre et à maintenir.</li>
+    </ul>
+
+    <p class="text-sm text-gray-700 mt-3">
+      Erreur fréquente : appeler “test unitaire” un test qui touche la base de
+      données. Dans ce cas, ce n’est plus unitaire, c’est de l’intégration.
+    </p>
+  </div>
+
+  <!-- Tests d’Intégration -->
+  <div class="bg-purple-50 p-4 rounded-lg border-l-4 border-purple-500">
+    <h4 class="font-bold text-purple-800 text-lg">
+      3. Tests d’Intégration — vérifier que les briques s’assemblent
+    </h4>
+
+    <p class="text-sm text-gray-700 mt-2">
+      Les tests d’intégration vérifient que plusieurs composants fonctionnent
+      correctement ensemble, dans des conditions proches du réel.
+    </p>
+
+    <ul class="list-disc list-inside mt-3 text-sm text-gray-600 space-y-1">
+      <li>API ↔ Base de données</li>
+      <li>Service ↔ Service</li>
+      <li>ORM ↔ Schéma de base de données</li>
+    </ul>
+
+    <p class="text-sm text-gray-700 mt-3">
+      Ces tests sont plus lents, plus fragiles et plus coûteux à maintenir,
+      c’est pourquoi on en fait moins. Bonne pratique CI : utiliser Docker
+      avec une base de données éphémère et nettoyer l’environnement après chaque test.
+    </p>
+  </div>
+
+  <!-- Tests End-to-End -->
+  <!-- Tests End-to-End -->
+<div class="bg-red-50 p-4 rounded-lg border-l-4 border-red-500">
+  <h4 class="font-bold text-red-800 text-lg">
+    4. Tests End-to-End (E2E) — validation finale
+  </h4>
+
+  <p class="text-sm text-gray-700 mt-2">
+    Les tests End-to-End vérifient le fonctionnement du système complet,
+    du point de vue d’un utilisateur réel.
+  </p>
+
+  <ul class="list-disc list-inside mt-3 text-sm text-gray-600 space-y-1">
+    <li>Simulent de vrais parcours utilisateur (login, formulaire, paiement).</li>
+    <li>Impliquent toute l’application : front, back, base de données.</li>
+    <li>Lents et fragiles, donc volontairement peu nombreux.</li>
+  </ul>
+
+  <p class="text-sm text-gray-700 mt-3">
+    Bonne pratique CI : exécuter ces tests uniquement sur les scénarios
+    critiques, souvent avant une release ou en exécution planifiée.
+  </p>
+</div>
+
+
+  <!-- conclusion -->
+  <h4 class="font-bold text-lg text-blue-700 mt-2 " > Dans le pipeline CI, chaque niveau a son rôle.</h4>
+  <ul class="list-disc list-inside mt-3 text-sm text-gray-600 space-y-1">
+    <li> Le lint empêche le mauvais code d’entrer.</li>
+    <li> Les tests unitaires vérifient la logique.</li>
+    <li> Les tests d’intégration vérifient que tout fonctionne ensemble.</li>
+    <li> Les tests End-to-End valident le système complet.</li>
+  </ul>
+
+
+</div>
+
+
+      <!--Le Pipeline CI -->
+      <h3 class="text-2xl font-bold mb-4 text-gray-800">Le Pipeline CI : Les Étapes Techniques</h3>
+      <p class="mb-4 text-gray-600">Voici ce qui se passe réellement dans le serveur CI à chaque git push.</p>
+      
+      <div class="bg-gray-900 text-gray-100 p-6 rounded-lg font-mono text-sm space-y-4 mb-8">
+        <div>
+          <span class="text-yellow-400 font-bold">Étape 1 : Le Déclencheur (Trigger)</span>
+          <p class="ml-4 text-gray-400">Le serveur CI détecte un changement sur le dépôt Git (via Webhook).</p>
+        </div>
+        <div>
+          <span class="text-yellow-400 font-bold">Étape 2 : Linting & Analyse Statique</span>
+          <p class="ml-4 text-gray-400">Vérifier la syntaxe. Si ça échoue, stop.</p>
+        </div>
+        <div>
+          <span class="text-yellow-400 font-bold">Étape 3 : Tests Unitaires</span>
+          <p class="ml-4 text-gray-400">Lancement de milliers de petits tests en parallèle (Jest, JUnit).</p>
+        </div>
+        <div>
+          <span class="text-yellow-400 font-bold">Étape 4 : Tests d'Intégration</span>
+          <p class="ml-4 text-gray-400">Vérification avec base de données temporaire.</p>
+        </div>
+        <div>
+          <span class="text-yellow-400 font-bold">Étape 5 : Build & Packaging</span>
+          <p class="ml-4 text-gray-400">Compilation et création de l'Artéfact (Image Docker, .jar).</p>
+        </div>
+      </div>
+
+      <!-- resume -->
+    <div class="bg-indigo-50 p-6 rounded-lg border border-indigo-100 mb-8">
+      <p class="text-xl font-bold text-indigo-700">
+        Le pipeline d'Intégration Continue (CI) vise à automatiser
+        la construction et le test immédiat de chaque changement de code,
+        arantissant ainsi la détection précoce des erreurs (Fail Fast) et l'établissement 
+        d'une confiance constante dans la qualité et la préparation du produit pour le déploiement.
+    </p>
+    </div>
+      <!--Jenkins -->
+      <h3 class="text-2xl font-bold mb-4 text-gray-800">JENKINS : Le Chef d'Orchestre du DevOps</h3>
+      
+      <div class="bg-indigo-50 p-6 rounded-lg mb-8 border-l-4 border-indigo-500">
+        <p class="mb-4 text-indigo-900 italic font-medium">
+          "Si la CI/CD était une usine, Jenkins en serait le contremaître. Il ne fabrique pas le produit lui-même, mais il crie les ordres pour que les machines le fassent."
+        </p>
+        
+        <h4 class="font-bold text-indigo-800 text-lg mb-2">1. C'est quoi exactement ?</h4>
+        <p class="mb-4 text-indigo-900">
+          Jenkins n'est pas juste un "serveur". C'est un <strong>Orchestrateur d'Automatisation</strong>. C'est un projet Open Source (gratuit), écrit en Java, et c'est le standard absolu du marché (utilisé par 80% des grandes entreprises).
+        </p>
+        <div class="bg-white p-4 rounded-lg shadow-sm mb-4">
+          <p class="text-gray-700"><strong>🎩 L'analogie :</strong> Imaginez un Majordome Suisse. Il a 1000 bras, il parle toutes les langues (Java, Python, Docker...) et il travaille 24h/24 sans jamais se plaindre.</p>
+        </div>
+
+        <h4 class="font-bold text-indigo-800 text-lg mb-4">2. Pourquoi est-il incontournable ? (Les 3 Piliers)</h4>
+        
+        <div class="space-y-4">
+          <div class="bg-white p-4 rounded-lg shadow-sm">
+            <h5 class="font-bold text-indigo-700 mb-2">A. L'Architecture "Cerveau & Muscles" (Master / Agent)</h5>
+            <p class="text-sm text-gray-700 mb-2">C'est sa plus grande force architecturale. Jenkins sépare la réflexion de l'action.</p>
+            <ul class="list-disc list-inside text-sm text-gray-600 space-y-1">
+              <li><strong>Le Controller (Le Cerveau) :</strong> Il gère l'interface web, les utilisateurs et planifie le travail. Il ne doit jamais lancer de compilations lourdes lui-même.</li>
+              <li><strong>Les Agents (Les Muscles) :</strong> Ce sont des serveurs esclaves (ou des conteneurs éphémères) qui exécutent les tâches sales.</li>
+            </ul>
+            <p class="text-sm text-gray-500 mt-2 italic">👉 Avantage : Vous pouvez avoir un Agent Windows pour compiler du .NET, un Agent Linux pour du Docker, et un Agent Mac pour une appli iOS. Jenkins pilote les trois en même temps.</p>
+          </div>
+
+          <div class="bg-white p-4 rounded-lg shadow-sm">
+            <h5 class="font-bold text-indigo-700 mb-2">B. Le "Couteau Suisse" (Les Plugins)</h5>
+            <p class="text-sm text-gray-700 mb-2">La puissance de Jenkins ne vient pas du logiciel lui-même, mais de ses <strong>1800+ Plugins</strong>. Vous utilisez AWS ? Il y a un plugin. Slack ? Un plugin. Kubernetes ? Un plugin.</p>
+            <p class="text-sm font-bold text-indigo-600">Règle d'or : "Si un outil DevOps existe, il existe un plugin Jenkins pour lui parler."</p>
+          </div>
+
+          <div class="bg-white p-4 rounded-lg shadow-sm">
+            <h5 class="font-bold text-indigo-700 mb-2">C. La Révolution : "Pipeline as Code"</h5>
+            <p class="text-sm text-gray-700 mb-2">Avant, on configurait Jenkins en cliquant partout dans l'interface (ce qu'on appelle péjorativement le "ClickOps"). C'était fragile et impossible à sauvegarder.</p>
+            <p class="text-sm text-gray-700 mb-2">Aujourd'hui, nous utilisons le <code>Jenkinsfile</code>.</p>
+            <ul class="list-disc list-inside text-sm text-gray-600 space-y-1">
+              <li>C'est un fichier texte qui décrit tout le pipeline.</li>
+              <li>Il vit <strong>DANS</strong> votre dépôt Git, à côté de votre code source.</li>
+            </ul>
+            <p class="text-sm text-gray-500 mt-2 italic">👉 Bénéfice : Si le serveur Jenkins brûle demain, on en installe un nouveau, on lui donne l'URL du Git, et il sait instantanément comment reconstruire le projet. C'est l'immortalité de la configuration.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- GitHub Actions -->
+      <h3 class="text-2xl font-bold mb-4 text-gray-800">L'Alternative Moderne : GitHub Actions</h3>
+      <p class="mb-4 text-gray-700">
+        Si Jenkins est le "père", GitHub Actions est le "fils prodige". C'est un outil SaaS intégré à GitHub, sans serveur à gérer.
+      </p>
+
+      <div class="overflow-x-auto shadow-lg rounded-lg mb-8">
+        <table class="min-w-full bg-white">
+          <thead class="bg-gray-800 text-white">
+            <tr>
+              <th class="py-3 px-4 text-left">Critère</th>
+              <th class="py-3 px-4 text-left">Jenkins 👴</th>
+              <th class="py-3 px-4 text-left">GitHub Actions 🚀</th>
+            </tr>
+          </thead>
+          <tbody class="text-gray-700 text-sm">
+            <tr class="border-b"><td class="py-3 px-4 font-bold">Type</td><td class="py-3 px-4">Serveur (Self-Hosted)</td><td class="py-3 px-4">SaaS (Cloud)</td></tr>
+            <tr class="border-b"><td class="py-3 px-4 font-bold">Config</td><td class="py-3 px-4">Jenkinsfile (Groovy)</td><td class="py-3 px-4">Workflow .yaml</td></tr>
+            <tr class="border-b"><td class="py-3 px-4 font-bold">Maintenance</td><td class="py-3 px-4">Élevée</td><td class="py-3 px-4">Nulle</td></tr>
+            <tr class="border-b"><td class="py-3 px-4 font-bold">Cible</td><td class="py-3 px-4">Grandes Entreprises</td><td class="py-3 px-4">Startups, Moderne</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Guide GitHub Actions -->
+      <h3 class="text-2xl font-bold mb-4 text-gray-800">GUIDE PRATIQUE : GitHub Actions</h3>
+      <p class="mb-4 text-gray-600">Tout se passe dans <code>.github/workflows/mon-pipeline.yml</code>.</p>
+      
+      <pre class="bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto mb-8 text-sm"><code>name: Mon Super Pipeline CI
+
+# 1. Le Déclencheur
+on:
+  push:
+    branches: [ "main" ]
+
+# 2. Les Tâches
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    # 3. Les Étapes
+    steps:
+    # A. Récupérer le code
+    - name: Checkout du code
+      uses: actions/checkout@v3
+
+    # B. Préparer Node.js
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+        
+    # C. Installer
+    - name: Installation
+      run: npm install
+
+    # D. Tests & Qualité
+    - name: Tests & Qualité
+      run: |
+        npm run lint
+        npm test
+
+    # E. Build
+    - name: Build Production
+      run: npm run build</code></pre>
+
+      <div class="bg-green-50 p-6 rounded-lg border border-green-100 text-center">
+        <p class="text-green-800 italic font-medium">
+          "GitHub Actions représente la démocratisation du DevOps. Il a supprimé la barrière technique de l'installation de serveur."
+        </p>
       </div>
     `
   },
@@ -655,22 +963,248 @@ export const sections = [
     timing: '1.5h',
     icon: Code,
     content: `
-      <div class="flex flex-col items-center justify-center h-64 text-gray-400">
-        <h2 class="text-2xl font-bold mb-2">Contenu à venir...</h2>
-        <p>Cette section sera dédiée à Terraform et Ansible.</p>
+      <h2 class="text-3xl font-bold mb-6 text-indigo-700">Infrastructure as Code (IaC)</h2>
+      
+      <div class="bg-white p-6 rounded-lg shadow-md mb-8 border-l-4 border-indigo-500">
+        <h3 class="text-xl font-semibold mb-3 text-gray-800">Qu’est-ce que l’Infrastructure as Code ?</h3>
+        <p class="mb-4 text-gray-700 text-lg leading-relaxed">
+          Infrastructure as Code (IaC) est une pratique DevOps qui consiste à gérer et provisionner l’infrastructure informatique à l’aide de code, au lieu de configurations manuelles.
+        </p>
+        <ul class="list-disc list-inside text-gray-700 space-y-2">
+            <li><strong>Décrite</strong> dans des fichiers (YAML, JSON, HCL…)</li>
+            <li><strong>Versionnée</strong> (Git)</li>
+            <li><strong>Automatisée</strong></li>
+            <li><strong>Reproductible</strong></li>
+        </ul>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8 mb-8">
+        <div class="bg-red-50 p-6 rounded-xl border border-red-100">
+          <h4 class="text-lg font-bold mb-2 text-red-700">Sans IaC ❌</h4>
+          <ul class="space-y-2 text-gray-700">
+            <li>Configurations manuelles</li>
+            <li>Erreurs humaines</li>
+            <li>Environnements différents (dev ≠ prod)</li>
+            <li>Déploiements lents</li>
+          </ul>
+        </div>
+        <div class="bg-green-50 p-6 rounded-xl border border-green-100">
+          <h4 class="text-lg font-bold mb-2 text-green-700">Avec IaC ✅</h4>
+          <ul class="space-y-2 text-gray-700">
+            <li>Infrastructure standardisée</li>
+            <li>Environnements identiques</li>
+            <li>Déploiements rapides</li>
+            <li>Rollback facile</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3 class="text-2xl font-bold mb-4 text-gray-800">Comment fonctionne l’IaC ?</h3>
+      <div class="space-y-4 mb-8">
+        <div class="bg-gray-50 p-4 rounded-lg">
+          <h4 class="font-bold text-indigo-600">1. Écrire le code d’infrastructure</h4>
+          <pre class="bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto mt-2"><code>resource "aws_instance" "web" {
+  ami           = "ami-0abcd1234"
+  instance_type = "t2.micro"
+}</code></pre>
+        </div>
+        <div class="bg-gray-50 p-4 rounded-lg">
+          <h4 class="font-bold text-indigo-600">2. Versionner le code</h4>
+          <p class="text-sm text-gray-600">Git (GitHub, GitLab, Bitbucket)</p>
+        </div>
+        <div class="bg-gray-50 p-4 rounded-lg">
+          <h4 class="font-bold text-indigo-600">3. Appliquer le code</h4>
+          <pre class="bg-gray-900 text-gray-100 p-2 rounded-lg overflow-x-auto mt-2 text-sm"><code>terraform apply</code></pre>
+        </div>
+      </div>
+
+      <h3 class="text-2xl font-bold mb-4 text-gray-800">Types d’Infrastructure as Code</h3>
+      <div class="grid md:grid-cols-2 gap-6 mb-8">
+        <div class="bg-white p-6 rounded-lg shadow border-t-4 border-blue-500">
+          <h4 class="font-bold text-lg text-blue-800 mb-2">IaC Déclarative</h4>
+          <p class="text-sm text-gray-600 mb-2">On décrit l’état final souhaité.</p>
+          <p class="text-sm font-semibold">Exemples : Terraform, AWS CloudFormation</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow border-t-4 border-purple-500">
+          <h4 class="font-bold text-lg text-purple-800 mb-2">IaC Impérative</h4>
+          <p class="text-sm text-gray-600 mb-2">On décrit les étapes à suivre.</p>
+          <p class="text-sm font-semibold">Exemples : Scripts Bash, Ansible</p>
+        </div>
+      </div>
+
+      <h3 class="text-2xl font-bold mb-4 text-gray-800">Outils Populaires</h3>
+      <div class="overflow-x-auto shadow-lg rounded-lg mb-8">
+        <table class="min-w-full bg-white">
+          <thead class="bg-gray-800 text-white">
+            <tr>
+              <th class="py-3 px-4 text-left">Outil</th>
+              <th class="py-3 px-4 text-left">Usage</th>
+            </tr>
+          </thead>
+          <tbody class="text-gray-700 text-sm">
+            <tr class="border-b"><td class="py-3 px-4 font-bold">Terraform</td><td class="py-3 px-4">Multi-cloud (AWS, Azure, GCP)</td></tr>
+            <tr class="border-b"><td class="py-3 px-4 font-bold">AWS CloudFormation</td><td class="py-3 px-4">AWS uniquement</td></tr>
+            <tr class="border-b"><td class="py-3 px-4 font-bold">Ansible</td><td class="py-3 px-4">Configuration & automatisation</td></tr>
+          </tbody>
+        </table>
       </div>
     `
   },
   {
     id: 'containers',
     category: 'Outils et Automatisation',
-    title: 'Conteneurisation',
+    title: 'Conteneurisation (Docker)',
     timing: '1.5h',
     icon: Box,
     content: `
-      <div class="flex flex-col items-center justify-center h-64 text-gray-400">
-        <h2 class="text-2xl font-bold mb-2">Contenu à venir...</h2>
-        <p>Cette section sera dédiée à Docker et Kubernetes.</p>
+      <h2 class="text-3xl font-bold mb-6 text-indigo-700">Introduction à Docker</h2>
+      
+      <div class="bg-white p-6 rounded-lg shadow-md mb-8 border-l-4 border-blue-500">
+        <h3 class="text-xl font-semibold mb-3 text-gray-800">Docker c’est quoi ?</h3>
+        <p class="mb-4 text-gray-700">
+          Docker est une plateforme qui permet de <strong>Créer, Déployer et Exécuter</strong> des applications dans des conteneurs, de façon rapide et standardisée.
+        </p>
+        <div class="bg-blue-50 p-4 rounded mt-4">
+          <h4 class="font-bold text-blue-800">C’est quoi un conteneur ?</h4>
+          <p class="text-blue-700">Un mini-ordinateur qui contient : ton application + les dépendances + les configurations. Il garantit que l’application fonctionne partout de la même manière.</p>
+        </div>
+      </div>
+
+      <h3 class="text-2xl font-bold mb-4 text-gray-800">Concepts Clés</h3>
+      <div class="grid md:grid-cols-3 gap-4 mb-8">
+        <div class="bg-white p-4 rounded shadow border border-gray-200">
+          <strong class="block text-lg mb-2 text-indigo-600">Image Docker</strong>
+          <p class="text-sm text-gray-600">Un modèle qui contient le code + les dépendances (ex: python:3.11).</p>
+        </div>
+        <div class="bg-white p-4 rounded shadow border border-gray-200">
+          <strong class="block text-lg mb-2 text-indigo-600">Conteneur</strong>
+          <p class="text-sm text-gray-600">Une instance d’une image (l'application qui tourne).</p>
+        </div>
+        <div class="bg-white p-4 rounded shadow border border-gray-200">
+          <strong class="block text-lg mb-2 text-indigo-600">Dockerfile</strong>
+          <p class="text-sm text-gray-600">Le fichier recette pour construire l'image.</p>
+        </div>
+      </div>
+
+      <h3 class="text-2xl font-bold mb-4 text-gray-800">Exemple de Dockerfile</h3>
+      <pre class="bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto mb-8"><code># 1. Utiliser une image python officielle
+FROM python:3.11
+
+# 2. Définir le dossier de travail
+WORKDIR /app
+
+# 3. Copier les fichiers
+COPY requirements.txt .
+RUN pip install -r requirements.txt
+COPY . .
+
+# 4. Exposer le port
+EXPOSE 5000
+
+# 5. Lancer l'application
+CMD ["python", "app.py"]</code></pre>
+
+      <h3 class="text-2xl font-bold mb-4 text-gray-800">Commandes Essentielles</h3>
+      <div class="bg-gray-800 text-gray-200 p-4 rounded-lg font-mono text-sm space-y-2 mb-8">
+        <p><span class="text-green-400"># Construire l'image</span><br>docker build -t mon-app .</p>
+        <p><span class="text-green-400"># Lancer un conteneur</span><br>docker run -d -p 5000:5000 mon-app</p>
+      </div>
+    `
+  },
+  {
+    id: 'devsecops',
+    category: 'Sécurité',
+    title: 'DevSecOps',
+    timing: '1h',
+    icon: Cpu,
+    content: `
+      <h2 class="text-3xl font-bold mb-6 text-indigo-700">DevSecOps & The Security Gate</h2>
+      
+      <div class="bg-white p-6 rounded-lg shadow-md mb-8 border-l-4 border-red-500">
+        <h3 class="text-xl font-semibold mb-3 text-gray-800">Pourquoi DevSecOps ?</h3>
+        <p class="mb-4 text-gray-700">
+          Le DevSecOps n'est pas seulement une méthode, c'est une évolution culturelle du DevOps qui intègre la sécurité comme une responsabilité partagée dès le début du cycle de développement.
+        </p>
+        <p class="font-semibold text-red-700">Objectif : Garantir un déploiement fiable et sécurisé sans ralentir la vitesse de livraison.</p>
+      </div>
+
+      <h3 class="text-2xl font-bold mb-4 text-gray-800">La "Security Gate" (La Porte de Sécurité)</h3>
+      <div class="bg-gray-50 p-6 rounded-lg mb-8">
+        <p class="mb-4 text-gray-700">C'est un point de contrôle automatisé placé dans le pipeline CI/CD :</p>
+        <ul class="space-y-2 mb-4">
+          <li class="flex items-center"><span class="text-green-500 mr-2">✅</span> Si le code est sûr → La porte s'ouvre.</li>
+          <li class="flex items-center"><span class="text-red-500 mr-2">⛔</span> Si vulnérabilité critique → La porte se ferme (Pipeline échoue).</li>
+        </ul>
+        <p class="text-sm text-gray-600"><strong>Outil de choix :</strong> SonarQube.</p>
+      </div>
+
+      <h3 class="text-2xl font-bold mb-4 text-gray-800">Les 3 Piliers de SonarQube</h3>
+      <div class="grid md:grid-cols-3 gap-4 mb-8">
+        <div class="bg-white p-4 rounded shadow border-t-4 border-yellow-500">
+          <h4 class="font-bold text-lg mb-2">🐞 Les Bugs</h4>
+          <p class="text-sm text-gray-600">Anomalies qui provoquent des erreurs (Fiabilité).</p>
+        </div>
+        <div class="bg-white p-4 rounded shadow border-t-4 border-red-500">
+          <h4 class="font-bold text-lg mb-2">🔓 Vulnérabilités</h4>
+          <p class="text-sm text-gray-600">Faiblesses exploitables par des pirates (Sécurité).</p>
+        </div>
+        <div class="bg-white p-4 rounded shadow border-t-4 border-blue-500">
+          <h4 class="font-bold text-lg mb-2">code Code Smells</h4>
+          <p class="text-sm text-gray-600">Code mal écrit, difficile à maintenir (Dette technique).</p>
+        </div>
+      </div>
+
+      <h3 class="text-2xl font-bold mb-4 text-gray-800">Configuration (sonar-project.properties)</h3>
+      <pre class="bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto mb-8"><code># Clé unique du projet
+sonar.projectKey=DevOps_Presentation_Project
+# Nom affiché
+sonar.projectName=Projet DevOps Team
+# Version
+sonar.projectVersion=1.0
+# Sources
+sonar.sources=.</code></pre>
+
+      <h2 class="text-3xl font-bold mb-6 text-indigo-700">La Sécurité des Conteneurs (Container Scanning)</h2>
+      
+      <div class="bg-white p-6 rounded-lg shadow-md mb-8 border-l-4 border-orange-500">
+        <h3 class="text-xl font-semibold mb-3 text-gray-800">Pourquoi scanner le code ne suffit pas ?</h3>
+        <p class="mb-4 text-gray-700">
+          Même si votre code est parfait, si vous utilisez une image de base (ex: <code>node:14</code>) qui contient une faille de sécurité critique dans le système d'exploitation (Linux), les hackers passeront par là.
+        </p>
+        <p class="font-semibold text-orange-700">C'est la sécurité de la "Supply Chain" (Chaîne d'approvisionnement).</p>
+      </div>
+
+      <h3 class="text-2xl font-bold mb-4 text-gray-800">L'Outil : Trivy</h3>
+      <div class="grid md:grid-cols-2 gap-8 mb-8">
+        <div class="bg-gray-50 p-6 rounded-lg">
+          <h4 class="font-bold text-indigo-600 mb-2">Comment ça marche ?</h4>
+          <p class="text-sm text-gray-600 mb-2">
+            Trivy scanne votre image Docker avant le déploiement. Il regarde la liste des paquets installés (OS et dépendances) et la compare à une base de données de vulnérabilités mondiales (CVE - Common Vulnerabilities and Exposures).
+          </p>
+        </div>
+        <div class="bg-gray-50 p-6 rounded-lg">
+          <h4 class="font-bold text-indigo-600 mb-2">La Règle d'Or</h4>
+          <p class="text-sm text-gray-600">
+            Si Trivy trouve une faille classée <strong>"CRITICAL"</strong>, le pipeline CI/CD doit <strong>bloquer le déploiement</strong> immédiatement.
+          </p>
+        </div>
+      </div>
+
+      <h3 class="text-2xl font-bold mb-4 text-gray-800">Exemple d'Intégration CI/CD</h3>
+      <div class="bg-gray-900 text-gray-100 p-4 rounded-lg font-mono text-sm mb-8">
+        <p class="text-gray-400 mb-2"># 1. Scan informatif (ne bloque pas)</p>
+        <p class="mb-4">trivy image my-app:latest</p>
+        
+        <p class="text-gray-400 mb-2"># 2. Scan bloquant (Security Gate)</p>
+        <p class="text-green-400">trivy image --exit-code 1 --severity CRITICAL my-app:latest</p>
+        <p class="text-gray-500 mt-2 text-xs">// Si une faille critique est trouvée, la commande renvoie une erreur (exit 1) et le pipeline s'arrête.</p>
+      </div>
+
+      <div class="bg-indigo-50 p-6 rounded-lg border border-indigo-100">
+        <h3 class="font-bold text-indigo-800 mb-2">Conclusion</h3>
+        <p class="text-indigo-700">
+          L'intégration de SonarQube comme "Security Gate" permet de passer d'une sécurité subjective à une sécurité mesurable et automatisée.
+        </p>
       </div>
     `
   }
