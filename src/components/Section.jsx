@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { sections } from '../data/content';
 import InfinityLoop from './Diagram';
 import ComparisonTable from './ComparisonTable';
+import CIDiagram from './CIDiagram';
 
 const Section = ({ activeSectionId }) => {
   const section = sections.find(s => s.id === activeSectionId);
@@ -36,6 +37,12 @@ const Section = ({ activeSectionId }) => {
 
         {section.id === 'agile-devops' && (
           <ComparisonTable />
+        )}
+
+        {section.id === 'ci-cd-deep' && (
+          <div className="mb-12 flex justify-center">
+            <CIDiagram />
+          </div>
         )}
 
         <div 
