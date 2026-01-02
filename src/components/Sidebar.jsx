@@ -45,9 +45,7 @@ const Sidebar = ({ activeSection, setActiveSection, isOpen, setIsOpen }) => {
                         <Icon size={20} className="mr-3" />
                         <div className="flex flex-col items-start">
                           <span className="text-sm font-medium text-left">{section.title}</span>
-                          {section.timing && (
-                            <span className="text-xs text-gray-500">{section.timing}</span>
-                          )}
+                          
                         </div>
                       </button>
                     </li>

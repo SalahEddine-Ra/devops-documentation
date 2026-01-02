@@ -10,7 +10,10 @@ import {
   Code,
   Box,
   TrendingUp,
-  Cpu
+  Cpu,
+  Container,
+  GitBranch,
+  Rocket
 } from 'lucide-react';
 
 export const sections = [
@@ -23,15 +26,7 @@ export const sections = [
     content: `
       <h2 class="text-3xl font-bold mb-6 text-indigo-700">Introduction au DevOps</h2>
       
-      <div class="bg-white p-6 rounded-lg shadow-md mb-8 border-l-4 border-indigo-500">
-        <h3 class="text-xl font-semibold mb-3 text-gray-800">Définition</h3>
-        <p class="mb-4 text-gray-700 text-lg leading-relaxed">
-          DevOps est une culture, une pratique et un ensemble d'outils qui intègrent et automatisent les processus entre les équipes de développement ("Dev") et d'opérations ("Ops").
-        </p>
-        <p class="text-gray-600">
-          L'objectif principal est de raccourcir le cycle de vie du développement des logiciels et de fournir des livraisons continues de haute qualité. Ce n'est pas un simple poste ou un outil, mais une transformation profonde de la collaboration.
-        </p>
-      </div>
+      
 
       <h3 class="text-2xl font-bold mb-4 text-gray-800">Le Contexte Problématique : Le "Mur de la Confusion"</h3>
       
@@ -71,8 +66,18 @@ export const sections = [
         </div>
       </div>
 
+      <div class="bg-white p-6 rounded-lg shadow-md mb-8 border-l-4 border-indigo-500">
+        <h3 class="text-xl font-semibold mb-3 text-gray-800">Définition</h3>
+        <p class="mb-4 text-gray-700 text-lg leading-relaxed">
+          DevOps est une culture, une pratique et un ensemble d'outils qui intègrent et automatisent les processus entre les équipes de développement ("Dev") et d'opérations ("Ops").
+        </p>
+        <p class="text-gray-600">
+          L'objectif principal est de raccourcir le cycle de vie du développement des logiciels et de fournir des livraisons continues de haute qualité. Ce n'est pas un simple poste ou un outil, mais une transformation profonde de la collaboration.
+        </p>
+      </div>
+
       <h3 class="text-2xl font-bold mb-4 text-gray-800">Objectifs du DevOps</h3>
-      <ul class="grid md:grid-cols-3 gap-4">
+      <ul class="grid md:grid-cols-3 gap-4 mb-8">
         <li class="bg-green-50 p-4 rounded-lg border border-green-200">
           <strong class="block text-green-700 mb-1">Vitesse</strong>
           Livrer plus vite et plus souvent.
@@ -86,6 +91,148 @@ export const sections = [
           Briser les silos et partager la responsabilité.
         </li>
       </ul>
+
+      
+
+      <h3 class="text-2xl font-bold mb-4 text-gray-800">✅ Les Avantages du DevOps</h3>
+      
+      <div class="grid md:grid-cols-2 gap-6 mb-8">
+        <div class="bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-xl border border-green-200 shadow-md">
+          <h4 class="text-xl font-bold text-green-800 mb-4 flex items-center">
+            <span class="text-3xl mr-3">⚡</span> Avantages Techniques
+          </h4>
+          <ul class="space-y-3 text-gray-700">
+            <li class="flex items-start">
+              <span class="text-green-600 mr-2">✓</span>
+              <div>
+                <strong>Déploiements plus rapides :</strong> De semaines/mois à plusieurs fois par jour
+              </div>
+            </li>
+            <li class="flex items-start">
+              <span class="text-green-600 mr-2">✓</span>
+              <div>
+                <strong>Qualité améliorée :</strong> Tests automatisés et intégration continue réduisent les bugs
+              </div>
+            </li>
+            <li class="flex items-start">
+              <span class="text-green-600 mr-2">✓</span>
+              <div>
+                <strong>Récupération rapide :</strong> Rollback automatisé et détection précoce des problèmes
+              </div>
+            </li>
+            <li class="flex items-start">
+              <span class="text-green-600 mr-2">✓</span>
+              <div>
+                <strong>Scalabilité :</strong> Infrastructure élastique et auto-scaling
+              </div>
+            </li>
+            <li class="flex items-start">
+              <span class="text-green-600 mr-2">✓</span>
+              <div>
+                <strong>Sécurité renforcée :</strong> DevSecOps intègre la sécurité dès le début (Shift-Left)
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-xl border border-blue-200 shadow-md">
+          <h4 class="text-xl font-bold text-blue-800 mb-4 flex items-center">
+            <span class="text-3xl mr-3">🎯</span> Avantages Business
+          </h4>
+          <ul class="space-y-3 text-gray-700">
+            <li class="flex items-start">
+              <span class="text-blue-600 mr-2">✓</span>
+              <div>
+                <strong>Time-to-Market réduit :</strong> Livraison plus rapide des fonctionnalités aux clients
+              </div>
+            </li>
+            <li class="flex items-start">
+              <span class="text-blue-600 mr-2">✓</span>
+              <div>
+                <strong>Satisfaction client :</strong> Feedback rapide et amélioration continue
+              </div>
+            </li>
+            <li class="flex items-start">
+              <span class="text-blue-600 mr-2">✓</span>
+              <div>
+                <strong>Réduction des coûts :</strong> Moins de temps perdu, moins de gaspillage
+              </div>
+            </li>
+            <li class="flex items-start">
+              <span class="text-blue-600 mr-2">✓</span>
+              <div>
+                <strong>Innovation accélérée :</strong> Expérimentation facilitée avec des petits lots
+              </div>
+            </li>
+            <li class="flex items-start">
+              <span class="text-blue-600 mr-2">✓</span>
+              <div>
+                <strong>Compétitivité :</strong> Capacité à s'adapter rapidement au marché
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="bg-gradient-to-br from-purple-50 to-purple-100 p-6 rounded-xl border border-purple-200 shadow-md">
+          <h4 class="text-xl font-bold text-purple-800 mb-4 flex items-center">
+            <span class="text-3xl mr-3">👥</span> Avantages Organisationnels
+          </h4>
+          <ul class="space-y-3 text-gray-700">
+            <li class="flex items-start">
+              <span class="text-purple-600 mr-2">✓</span>
+              <div>
+                <strong>Collaboration améliorée :</strong> Silos brisés entre Dev et Ops
+              </div>
+            </li>
+            <li class="flex items-start">
+              <span class="text-purple-600 mr-2">✓</span>
+              <div>
+                <strong>Culture de responsabilité :</strong> Les équipes possèdent leurs produits de bout en bout
+              </div>
+            </li>
+            <li class="flex items-start">
+              <span class="text-purple-600 mr-2">✓</span>
+              <div>
+                <strong>Moral des équipes :</strong> Moins de stress, plus d'autonomie
+              </div>
+            </li>
+            <li class="flex items-start">
+              <span class="text-purple-600 mr-2">✓</span>
+              <div>
+                <strong>Apprentissage continu :</strong> Culture d'expérimentation et d'amélioration
+              </div>
+            </li>
+            <li class="flex items-start">
+              <span class="text-purple-600 mr-2">✓</span>
+              <div>
+                <strong>Transparence :</strong> Visibilité accrue sur les processus et les métriques
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        
+      </div>
+
+      
+
+      <div class="bg-yellow-50 border-l-4 border-yellow-500 p-6 rounded-lg">
+        <h4 class="font-bold text-yellow-800 mb-2 flex items-center">
+          <span class="text-2xl mr-2">⚠️</span> Important à Retenir
+        </h4>
+        <p class="text-gray-700 mb-2">
+          DevOps n'est <strong>pas</strong> :
+        </p>
+        <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4">
+          <li>Un simple poste ou un titre</li>
+          <li>Seulement des outils (Jenkins, Docker, Kubernetes)</li>
+          <li>Une solution miracle qui résout tous les problèmes</li>
+          <li>Uniquement de l'automatisation</li>
+        </ul>
+        <p class="text-gray-700 mt-3">
+          DevOps <strong>est</strong> : Une <strong>culture</strong> et une <strong>philosophie</strong> qui transforme la façon dont les organisations développent, déploient et maintiennent leurs logiciels.
+        </p>
+      </div>
     `
   },
   {
@@ -295,307 +442,15 @@ export const sections = [
     `
   },
   {
-    id: 'dora',
-    category: 'Fondamentaux de DevOps',
-    title: 'Métriques DORA & ROI',
-    timing: '1.5h',
-    icon: TrendingUp,
-    content: `
-      <h2 class="text-3xl font-bold mb-6 text-indigo-700">DORA et la Performance DevOps</h2>
-      
-      <!-- 2.1 Qu'est-ce que DORA -->
-      <div class="mb-10">
-        <h3 class="text-2xl font-bold text-gray-800 mb-4">2.1. Qu’est-ce que DORA ?</h3>
-        <div class="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-r-lg">
-          <ul class="space-y-3 text-gray-700">
-            <li class="flex items-start">
-              <span class="mr-2 mt-1 text-blue-500">●</span>
-              <span><strong>DORA (DevOps Research and Assessment)</strong> est une organisation créée en 2014 par Nicole Forsgren, Jez Humble et Gene Kim.</span>
-            </li>
-            <li class="flex items-start">
-              <span class="mr-2 mt-1 text-blue-500">●</span>
-              <span><strong>Objectif :</strong> Analyser scientifiquement la performance des équipes DevOps pour identifier les pratiques qui permettent de livrer plus vite et plus fiablement.</span>
-            </li>
-            <li class="flex items-start">
-              <span class="mr-2 mt-1 text-blue-500">●</span>
-              <span>Étude basée sur des milliers d'équipes mondiales pour distinguer les "élites" des autres.</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- 2.2 Les 4 métriques -->
-      <div class="mb-10">
-        <h3 class="text-2xl font-bold text-gray-800 mb-6">2.2. Les 4 Métriques Clés</h3>
-        <p class="mb-4 text-gray-600">Ces indicateurs évaluent l'efficacité selon deux axes : la <strong>Vélocité</strong> (Throughput) et la <strong>Stabilité</strong>.</p>
-        
-        <div class="overflow-x-auto shadow-lg rounded-lg mb-6">
-          <table class="min-w-full bg-white">
-            <thead class="bg-gray-800 text-white">
-              <tr>
-                <th class="py-3 px-4 text-left w-1/4">Métrique</th>
-                <th class="py-3 px-4 text-left w-1/3">Description</th>
-                <th class="py-3 px-4 text-left">Pourquoi c’est important</th>
-              </tr>
-            </thead>
-            <tbody class="text-gray-700 text-sm">
-              <tr class="border-b bg-green-50">
-                <td class="py-3 px-4 font-bold text-green-800">Deployment Frequency<br><span class="text-xs font-normal text-gray-500">(Vélocité)</span></td>
-                <td class="py-3 px-4">Fréquence de déploiement en production.</td>
-                <td class="py-3 px-4">Mesure l’agilité et la capacité à réagir aux besoins du marché.</td>
-              </tr>
-              <tr class="border-b bg-green-50">
-                <td class="py-3 px-4 font-bold text-green-800">Lead Time for Changes<br><span class="text-xs font-normal text-gray-500">(Vélocité)</span></td>
-                <td class="py-3 px-4">Temps entre le commit et la mise en production.</td>
-                <td class="py-3 px-4">Indicateur d'efficacité du pipeline CI/CD.</td>
-              </tr>
-              <tr class="border-b bg-purple-50">
-                <td class="py-3 px-4 font-bold text-purple-800">Change Failure Rate<br><span class="text-xs font-normal text-gray-500">(Stabilité)</span></td>
-                <td class="py-3 px-4">% de déploiements causant une panne.</td>
-                <td class="py-3 px-4">Mesure la qualité : un bon DevOps ne livre pas juste vite, mais bien.</td>
-              </tr>
-              <tr class="border-b bg-purple-50">
-                <td class="py-3 px-4 font-bold text-purple-800">MTTR (Recovery)<br><span class="text-xs font-normal text-gray-500">(Stabilité)</span></td>
-                <td class="py-3 px-4">Temps moyen pour rétablir le service après incident.</td>
-                <td class="py-3 px-4">Évalue la résilience et la capacité de correction rapide.</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-
-      <!-- 2.3 Benchmarks -->
-      <div class="mb-10">
-        <h3 class="text-2xl font-bold text-gray-800 mb-4">2.3. Benchmarks DORA (Élite vs Faible)</h3>
-        <div class="grid md:grid-cols-2 gap-4">
-          <div class="bg-gradient-to-br from-yellow-100 to-yellow-50 p-6 rounded-xl border border-yellow-200">
-            <h4 class="text-xl font-bold text-yellow-800 mb-4 flex items-center">🏆 Équipes Élites</h4>
-            <ul class="space-y-3">
-              <li class="flex justify-between border-b border-yellow-200 pb-2">
-                <span class="text-gray-600">Fréquence</span>
-                <span class="font-bold text-gray-900">Plusieurs / jour</span>
-              </li>
-              <li class="flex justify-between border-b border-yellow-200 pb-2">
-                <span class="text-gray-600">Lead Time</span>
-                <span class="font-bold text-gray-900">< 1 heure</span>
-              </li>
-              <li class="flex justify-between border-b border-yellow-200 pb-2">
-                <span class="text-gray-600">MTTR</span>
-                <span class="font-bold text-gray-900">< 1 heure</span>
-              </li>
-              <li class="flex justify-between">
-                <span class="text-gray-600">Taux d'échec</span>
-                <span class="font-bold text-gray-900">0 - 15%</span>
-              </li>
-            </ul>
-          </div>
-          
-          <div class="bg-gray-100 p-6 rounded-xl border border-gray-200">
-            <h4 class="text-xl font-bold text-gray-600 mb-4 flex items-center">🐢 Équipes Faibles</h4>
-            <ul class="space-y-3">
-              <li class="flex justify-between border-b border-gray-200 pb-2">
-                <span class="text-gray-500">Fréquence</span>
-                <span class="font-bold text-gray-700">1 / mois ou moins</span>
-              </li>
-              <li class="flex justify-between border-b border-gray-200 pb-2">
-                <span class="text-gray-500">Lead Time</span>
-                <span class="font-bold text-gray-700">> 6 mois</span>
-              </li>
-              <li class="flex justify-between border-b border-gray-200 pb-2">
-                <span class="text-gray-500">MTTR</span>
-                <span class="font-bold text-gray-700">Très élevé</span>
-              </li>
-              <li class="flex justify-between">
-                <span class="text-gray-500">Taux d'échec</span>
-                <span class="font-bold text-gray-700">46 - 60%</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <!-- 3. Avantages -->
-      <div class="mb-10">
-        <h3 class="text-2xl font-bold text-gray-800 mb-4">3. Avantages Business</h3>
-        <div class="grid md:grid-cols-2 gap-4">
-          <div class="p-4 bg-white rounded shadow-sm border-l-4 border-green-500">
-            <h4 class="font-bold text-green-700">🚀 Time-to-market réduit</h4>
-            <p class="text-sm text-gray-600">Livrer plus tôt pour répondre aux besoins utilisateurs.</p>
-          </div>
-          <div class="p-4 bg-white rounded shadow-sm border-l-4 border-blue-500">
-            <h4 class="font-bold text-blue-700">💎 Qualité & Fiabilité</h4>
-            <p class="text-sm text-gray-600">Moins d'incidents, expérience utilisateur stable.</p>
-          </div>
-          <div class="p-4 bg-white rounded shadow-sm border-l-4 border-orange-500">
-            <h4 class="font-bold text-orange-700">💰 Efficacité Opérationnelle</h4>
-            <p class="text-sm text-gray-600">Moins de downtime et de correctifs d'urgence coûteux.</p>
-          </div>
-          <div class="p-4 bg-white rounded shadow-sm border-l-4 border-purple-500">
-            <h4 class="font-bold text-purple-700">🤝 Satisfaction & Culture</h4>
-            <p class="text-sm text-gray-600">Meilleure collaboration, moins de burnout.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- 4. Cas d'étude -->
-      <div class="mb-10 bg-slate-50 p-8 rounded-2xl border border-slate-200">
-        <div class="flex items-center mb-6">
-          <div class="bg-indigo-600 text-white p-2 rounded-lg mr-4">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
-          </div>
-          <div>
-            <h3 class="text-2xl font-bold text-gray-900">Cas d'Étude : TechShop Morocco</h3>
-            <p class="text-gray-500">E-commerce électronique • 35 employés (12 Devs, 3 Ops)</p>
-          </div>
-        </div>
-
-        <div class="grid md:grid-cols-2 gap-8">
-          <div>
-            <h4 class="font-bold text-red-600 mb-2 uppercase text-sm tracking-wide">Le Problème (Black Friday 2024)</h4>
-            <div class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-red-500 mb-4">
-              <ul class="space-y-2 text-gray-700 text-sm">
-                <li>❌ <strong>4 heures de panne</strong> totale pendant le pic.</li>
-                <li>💸 <strong>Perte :</strong> 200 000 DH.</li>
-                <li>🐛 <strong>Cause :</strong> Bug déploiement manuel raté.</li>
-              </ul>
-            </div>
-            
-            <h4 class="font-bold text-gray-700 mb-2 text-sm">Situation Actuelle</h4>
-            <ul class="list-disc list-inside text-gray-600 text-sm space-y-1">
-              <li>Déploiements 1x/mois (Vendredi soir 😱).</li>
-              <li>35% des déploiements cassent la prod.</li>
-              <li>Note client : 3.2/5.</li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 class="font-bold text-indigo-600 mb-2 uppercase text-sm tracking-wide">Audit DORA</h4>
-            <div class="bg-white rounded-lg shadow-sm overflow-hidden">
-              <table class="min-w-full text-sm">
-                <thead class="bg-gray-100">
-                  <tr>
-                    <th class="p-3 text-left">Métrique</th>
-                    <th class="p-3 text-left">Valeur</th>
-                    <th class="p-3 text-center">Niveau</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr class="border-b">
-                    <td class="p-3 font-medium">Frequency</td>
-                    <td class="p-3">1 / mois</td>
-                    <td class="p-3 text-center"><span class="bg-red-100 text-red-800 px-2 py-1 rounded-full text-xs font-bold">LOW</span></td>
-                  </tr>
-                  <tr class="border-b">
-                    <td class="p-3 font-medium">Lead Time</td>
-                    <td class="p-3">3-4 sem.</td>
-                    <td class="p-3 text-center"><span class="bg-red-100 text-red-800 px-2 py-1 rounded-full text-xs font-bold">LOW</span></td>
-                  </tr>
-                  <tr class="border-b">
-                    <td class="p-3 font-medium">Failure Rate</td>
-                    <td class="p-3">35%</td>
-                    <td class="p-3 text-center"><span class="bg-red-100 text-red-800 px-2 py-1 rounded-full text-xs font-bold">HIGH</span></td>
-                  </tr>
-                  <tr>
-                    <td class="p-3 font-medium">MTTR</td>
-                    <td class="p-3">6-8h</td>
-                    <td class="p-3 text-center"><span class="bg-red-100 text-red-800 px-2 py-1 rounded-full text-xs font-bold">LOW</span></td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- 5. Conclusion -->
-      <div class="bg-indigo-50 p-6 rounded-lg border border-indigo-100">
-        <h3 class="font-bold text-indigo-800 mb-2">Conclusion</h3>
-        <p class="text-indigo-700">
-          Les métriques DORA offrent un cadre clair pour mesurer l'efficacité. Pour TechShop Morocco, l'objectif est de passer de "Low" à "Medium" en automatisant le pipeline (CI/CD) pour réduire le taux d'échec et accélérer les déploiements.
-        </p>
-      </div>
-    `
-  },
-  {
     id: 'agile-devops',
     category: 'Fondamentaux de DevOps',
     title: 'Agile vs DevOps',
     timing: '1h',
     icon: GitMerge,
     content: `
-      <h2 class="text-3xl font-bold mb-6 text-indigo-700">Agile vs DevOps</h2>
-      <p class="mb-6 text-gray-600">Comparaison détaillée des approches.</p>
+      
       
 <!-- Table rendered via React Component -->
-    `
-  },
-  {
-    id: 'scrum-devops',
-    category: 'Fondamentaux de DevOps',
-    title: 'Scrum + DevOps',
-    timing: '1.5h',
-    icon: RefreshCw,
-    content: `
-      <h2 class="text-3xl font-bold mb-6 text-indigo-700">Intégration Scrum + DevOps</h2>
-      <p class="mb-6 text-gray-600 text-lg">Le but est de combiner les cérémonies agiles avec l’automatisation DevOps pour créer un "Sprint with CI/CD".</p>
-
-      <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-8">
-        <div class="bg-gradient-to-r from-indigo-600 to-purple-600 p-4 text-white">
-          <h3 class="font-bold text-xl">Le Sprint DevOps Idéal</h3>
-        </div>
-        <div class="divide-y divide-gray-200">
-          <div class="p-6 flex flex-col md:flex-row">
-            <div class="md:w-1/4 font-bold text-indigo-600 mb-2 md:mb-0">Sprint Planning</div>
-            <div class="md:w-3/4 text-gray-700">
-              <p>Ne pas planifier que du code ! Planifier aussi les pipelines.</p>
-              <ul class="list-disc list-inside mt-2 text-sm text-gray-600">
-                <li>Définir les User Stories ET les critères de déploiement.</li>
-                <li>Inclure des tâches techniques (mise à jour CI, infra).</li>
-              </ul>
-            </div>
-          </div>
-          <div class="p-6 flex flex-col md:flex-row bg-gray-50">
-            <div class="md:w-1/4 font-bold text-indigo-600 mb-2 md:mb-0">Daily Scrum</div>
-            <div class="md:w-3/4 text-gray-700">
-              <p>Suivre l'avancement du code ET de l'état des builds.</p>
-              <ul class="list-disc list-inside mt-2 text-sm text-gray-600">
-                <li>"Le build est-il passé ?"</li>
-                <li>"L'environnement de staging est-il stable ?"</li>
-              </ul>
-            </div>
-          </div>
-          <div class="p-6 flex flex-col md:flex-row">
-            <div class="md:w-1/4 font-bold text-indigo-600 mb-2 md:mb-0">Développement</div>
-            <div class="md:w-3/4 text-gray-700">
-              <p>Intégration Continue en temps réel.</p>
-              <ul class="list-disc list-inside mt-2 text-sm text-gray-600">
-                <li>Commits fréquents sur Git.</li>
-                <li>Chaque commit déclenche les tests automatiques.</li>
-              </ul>
-            </div>
-          </div>
-          <div class="p-6 flex flex-col md:flex-row bg-gray-50">
-            <div class="md:w-1/4 font-bold text-indigo-600 mb-2 md:mb-0">Sprint Review</div>
-            <div class="md:w-3/4 text-gray-700">
-              <p>Démo sur un environnement iso-prod, pas en local.</p>
-              <ul class="list-disc list-inside mt-2 text-sm text-gray-600">
-                <li>Le logiciel est déployé automatiquement.</li>
-                <li>On valide le fonctionnement réel.</li>
-              </ul>
-            </div>
-          </div>
-          <div class="p-6 flex flex-col md:flex-row">
-            <div class="md:w-1/4 font-bold text-indigo-600 mb-2 md:mb-0">Retrospective</div>
-            <div class="md:w-3/4 text-gray-700">
-              <p>Améliorer le processus ET le pipeline.</p>
-              <ul class="list-disc list-inside mt-2 text-sm text-gray-600">
-                <li>"Pourquoi le build a cassé 3 fois ?"</li>
-                <li>"Comment accélérer le déploiement ?"</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
     `
   },
   {
@@ -634,324 +489,1062 @@ export const sections = [
         </p>
       </div>
     `
-  },
-  {
-    id: 'ci-cd-deep',
+  },{
+    id: 'docker-intro',
     category: 'Outils et Automatisation',
-    title: 'Intégration Continue (CI)',
-    timing: '2h',
-    icon: Server,
+    title: '🎯 Introduction à Docker',
+    timing: '2.5h',
+    icon: Container,
     content: `
-      <h2 class="text-3xl font-bold mb-6 text-indigo-700">L'Intégration Continue (CI) – Construire et Tester</h2>
+      <h2 class="text-3xl font-bold mb-6 text-indigo-700">🎯 Introduction à Docker</h2>
 
-      <!--Introduction -->
-      <div class="bg-white p-6 rounded-lg shadow-md mb-8 border-l-4 border-indigo-500">
-        <h3 class="text-xl font-semibold mb-3 text-gray-800">Introduction : Le Scénario du "Merge Day"</h3>
-        <p class="mb-4 text-gray-700 italic">
-          Imaginez ce scénario classique : Vous travaillez sur une fonctionnalité depuis deux semaines. Le vendredi soir, vous décidez d'envoyer votre code sur la branche principale (Main). Et là... C'est le drame.
+      <!-- VM vs Docker Comparison -->
+      <div class="bg-gradient-to-r from-blue-50 to-purple-50 p-6 rounded-lg shadow-lg mb-8 border-l-4 border-indigo-500">
+        <h3 class="text-2xl font-bold mb-4 text-gray-800">Machine Virtuelle vs Docker : La Révolution du Déploiement</h3>
+        <p class="mb-6 text-gray-700 text-lg leading-relaxed">
+          Avant de comprendre Docker, il faut comprendre pourquoi les <strong>Machines Virtuelles (VM)</strong> ne suffisent plus dans le monde DevOps moderne.
         </p>
+      </div>
+
+      <h3 class="text-2xl font-bold mb-4 text-gray-800">Qu'est-ce qu'une Machine Virtuelle ?</h3>
+      <div class="bg-white p-6 rounded-lg shadow-md mb-8 border-l-4 border-blue-500">
         <p class="mb-4 text-gray-700">
-          Votre code casse tout. L'application ne démarre plus. Vos collègues sont bloqués. C'est ce qu'on appelle <strong>"l'Enfer de l'Intégration"</strong>.
+          Une <strong>Machine Virtuelle (VM)</strong> simule un ordinateur complet à l'intérieur d'un autre ordinateur. 
+          Elle inclut un <strong>système d'exploitation entier</strong> (Windows, Linux), des pilotes, des bibliothèques système, etc.
         </p>
+        <div class="bg-gray-50 p-4 rounded-lg">
+          <h4 class="font-bold text-blue-700 mb-2">Architecture d'une VM</h4>
+          <div class="space-y-2 text-sm font-mono">
+            <div class="bg-blue-100 p-2 rounded">👉 Application A (ex: Apache)</div>
+            <div class="bg-blue-200 p-2 rounded">👉 OS Complet (ex: Ubuntu - 2 GB)</div>
+            <div class="bg-blue-300 p-2 rounded">👉 Hyperviseur (VMware, VirtualBox)</div>
+            <div class="bg-gray-700 text-white p-2 rounded">👉 Système Hôte</div>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="text-2xl font-bold mb-4 text-gray-800">Qu'est-ce que Docker ?</h3>
+      <div class="bg-white p-6 rounded-lg shadow-md mb-8 border-l-4 border-green-500">
+        <p class="mb-4 text-gray-700">
+          Docker utilise des <strong>conteneurs</strong> qui partagent le noyau du système hôte. 
+          Au lieu d'embarquer un OS complet, le conteneur n'embarque que l'application et ses dépendances.
+        </p>
+        <div class="bg-gray-50 p-4 rounded-lg">
+          <h4 class="font-bold text-green-700 mb-2">Architecture Docker</h4>
+          <div class="space-y-2 text-sm font-mono">
+            <div class="bg-green-100 p-2 rounded">👉 Application A (Apache) + Dépendances (50 MB)</div>
+            <div class="bg-green-100 p-2 rounded">👉 Application B (Node.js) + Dépendances (100 MB)</div>
+            <div class="bg-green-200 p-2 rounded">👉 Docker Engine</div>
+            <div class="bg-gray-700 text-white p-2 rounded">👉 Système Hôte (un seul OS partagé)</div>
+          </div>
+        </div>
+      </div>
+
+      
+
+      <div class="grid md:grid-cols-2 gap-6 mb-8">
+        <div class="bg-red-50 p-6 rounded-xl border border-red-200">
+          <h4 class="text-lg font-bold mb-3 text-red-700 flex items-center">
+            <span class="text-2xl mr-2">🖥️</span> Problèmes des VMs
+          </h4>
+          <ul class="space-y-2 text-gray-700 text-sm">
+            <li>❌ <strong>Lourdes :</strong> Chaque VM = un OS complet (gaspillage de ressources)</li>
+            <li>❌ <strong>Lentes :</strong> Démarrage en minutes</li>
+            <li>❌ <strong>Coûteuses :</strong> Nécessitent beaucoup de RAM et CPU</li>
+            <li>❌ <strong>Complexes :</strong> Maintenance d'OS multiples</li>
+            <li>❌ <strong>Pas adaptées au DevOps :</strong> Trop lentes pour CI/CD moderne</li>
+          </ul>
+        </div>
+
+        <div class="bg-green-50 p-6 rounded-xl border border-green-200">
+          <h4 class="text-lg font-bold mb-3 text-green-700 flex items-center">
+            <span class="text-2xl mr-2">🐳</span> Avantages de Docker
+          </h4>
+          <ul class="space-y-2 text-gray-700 text-sm">
+            <li>✅ <strong>Léger :</strong> Ne contient que l'application</li>
+            <li>✅ <strong>Rapide :</strong> Démarrage en secondes</li>
+            <li>✅ <strong>Efficace :</strong> Partage les ressources du système hôte</li>
+            <li>✅ <strong>Portable :</strong> "Build once, run anywhere"</li>
+            <li>✅ <strong>Parfait pour DevOps :</strong> Idéal pour CI/CD et microservices</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="bg-gradient-to-r from-indigo-600 to-purple-600 text-white p-6 rounded-lg mb-8 text-center shadow-lg">
+        <h4 class="text-2xl font-bold mb-3">🎯 La Règle d'Or</h4>
+        <p class="text-lg mb-2">
+          <strong>Machine Virtuelle :</strong> Quand vous avez besoin d'un OS complet différent (Windows sur Linux, isolation maximale).
+        </p>
+        <p class="text-lg">
+          <strong>Docker :</strong> Pour tout le reste ! Surtout pour les applications cloud-native, microservices et pipelines DevOps.
+        </p>
+      </div>
+
+      <!-- Docker Definition -->
+      <h3 class="text-2xl font-bold mb-4 text-gray-800">👉 Docker c'est quoi ?</h3>
+      <div class="bg-white p-6 rounded-lg shadow-md mb-8 border-l-4 border-indigo-500">
+        <p class="mb-4 text-gray-700 text-lg leading-relaxed">
+          Docker est une plateforme qui permet de :
+        </p>
+        <div class="grid md:grid-cols-3 gap-4 mb-4">
+          <div class="bg-blue-50 p-4 rounded-lg text-center">
+            <div class="text-3xl mb-2">🔨</div>
+            <h4 class="font-bold text-blue-700">Créer</h4>
+          </div>
+          <div class="bg-green-50 p-4 rounded-lg text-center">
+            <div class="text-3xl mb-2">🚀</div>
+            <h4 class="font-bold text-green-700">Déployer</h4>
+          </div>
+          <div class="bg-purple-50 p-4 rounded-lg text-center">
+            <div class="text-3xl mb-2">▶️</div>
+            <h4 class="font-bold text-purple-700">Exécuter</h4>
+          </div>
+        </div>
         <p class="text-gray-700">
-          Pour éviter cela, les équipes modernes utilisent le Feature Branch Workflow combiné à un gardien impitoyable : <strong>L'Intégration Continue</strong>.
+          des applications dans des <strong>conteneurs</strong>, de façon <strong>rapide</strong> et <strong>standardisée</strong>.
         </p>
       </div>
 
-      <!--Qu'est-ce que la CI -->
-      <h3 class="text-2xl font-bold mb-4 text-gray-800">Qu'est-ce que l'Intégration Continue (CI) ?</h3>
-      <p class="mb-4 text-gray-700">
-        L'Intégration Continue est une pratique où les développeurs fusionnent leurs modifications de code dans un dépôt central (GitHub/GitLab) plusieurs fois par jour.
-      </p>
-      <ul class="list-disc list-inside bg-gray-50 p-4 rounded-lg text-gray-700 space-y-2 mb-8">
-        <li><strong>Le Concept :</strong> Automatiser la validation de chaque petit changement.</li>
-        <li><strong>L'Objectif :</strong> Le "Fail Fast" (Échouer vite). Si une erreur existe, nous voulons le savoir dans les 5 minutes via une notification automatique.</li>
-      </ul>
-
-      <!-- La Pyramide des Tests -->
-
-<h3 class="text-2xl font-bold mb-4 text-gray-800">
-  La Stratégie de Qualité : La Pyramide des Tests
-</h3>
-
-<p class="mb-6 text-gray-600">
-  Principe clé : plus un test est bas dans la pyramide, plus il doit être
-  <strong>nombreux</strong>, <strong>rapide</strong> et <strong>automatique</strong>.
-  <br />
-  En CI, on ne cherche pas à tout tester partout, mais à détecter les erreurs
-  le plus tôt possible, au coût le plus faible.
-</p>
-
-<div class="space-y-6 mb-8">
-
-  <!-- Analyse Statique & Linting -->
-  <div class="bg-blue-50 p-4 rounded-lg border-l-4 border-blue-500">
-    <h4 class="font-bold text-blue-800 text-lg">
-      1. Analyse Statique & Linting — le filtre d’entrée
-    </h4>
-
-    <p class="text-sm text-gray-700 mt-2">
-      Ici, le code n’est pas exécuté. On analyse uniquement le texte du code
-      pour vérifier qu’il respecte les règles techniques de base.
-    </p>
-
-    <ul class="list-disc list-inside mt-3 text-sm text-gray-600 space-y-1">
-      <li>Détecte les erreurs évidentes : variables inutilisées, imports morts.</li>
-      <li>Vérifie le style et la lisibilité du code.</li>
-      <li>Repère des vulnérabilités simples et du code trop complexe.</li>
-      <li>Très rapide : quelques secondes seulement.</li>
-    </ul>
-
-    <p class="text-sm text-gray-700 mt-3">
-      Règle claire en CI : <strong>si le lint échoue, le pipeline s’arrête</strong>.
-      Ce n’est pas du cosmétique, c’est une vraie barrière de qualité technique.
-    </p>
-  </div>
-
-  <!-- Tests Unitaires -->
-  <div class="bg-green-50 p-4 rounded-lg border-l-4 border-green-500">
-    <h4 class="font-bold text-green-800 text-lg">
-      2. Tests Unitaires — le socle de la qualité
-    </h4>
-
-    <p class="text-sm text-gray-700 mt-2">
-      Les tests unitaires vérifient une seule fonction ou méthode, en isolation
-      totale, sans base de données, sans réseau et sans API externe.
-    </p>
-
-    <p class="text-sm text-gray-700 mt-2">
-      Exemple simple : <code class="bg-gray-100 px-1 rounded">calculerTTC(100)</code>
-      doit retourner <strong>120</strong>.
-    </p>
-
-    <ul class="list-disc list-inside mt-3 text-sm text-gray-600 space-y-1">
-      <li>Valident la logique métier et les règles de calcul.</li>
-      <li>Attrapent la majorité des bugs.</li>
-      <li>Ultra rapides et exécutés à chaque push.</li>
-      <li>Faciles à comprendre et à maintenir.</li>
-    </ul>
-
-    <p class="text-sm text-gray-700 mt-3">
-      Erreur fréquente : appeler “test unitaire” un test qui touche la base de
-      données. Dans ce cas, ce n’est plus unitaire, c’est de l’intégration.
-    </p>
-  </div>
-
-  <!-- Tests d’Intégration -->
-  <div class="bg-purple-50 p-4 rounded-lg border-l-4 border-purple-500">
-    <h4 class="font-bold text-purple-800 text-lg">
-      3. Tests d’Intégration — vérifier que les briques s’assemblent
-    </h4>
-
-    <p class="text-sm text-gray-700 mt-2">
-      Les tests d’intégration vérifient que plusieurs composants fonctionnent
-      correctement ensemble, dans des conditions proches du réel.
-    </p>
-
-    <ul class="list-disc list-inside mt-3 text-sm text-gray-600 space-y-1">
-      <li>API ↔ Base de données</li>
-      <li>Service ↔ Service</li>
-      <li>ORM ↔ Schéma de base de données</li>
-    </ul>
-
-    <p class="text-sm text-gray-700 mt-3">
-      Ces tests sont plus lents, plus fragiles et plus coûteux à maintenir,
-      c’est pourquoi on en fait moins. Bonne pratique CI : utiliser Docker
-      avec une base de données éphémère et nettoyer l’environnement après chaque test.
-    </p>
-  </div>
-
-  <!-- Tests End-to-End -->
-  <!-- Tests End-to-End -->
-<div class="bg-red-50 p-4 rounded-lg border-l-4 border-red-500">
-  <h4 class="font-bold text-red-800 text-lg">
-    4. Tests End-to-End (E2E) — validation finale
-  </h4>
-
-  <p class="text-sm text-gray-700 mt-2">
-    Les tests End-to-End vérifient le fonctionnement du système complet,
-    du point de vue d’un utilisateur réel.
-  </p>
-
-  <ul class="list-disc list-inside mt-3 text-sm text-gray-600 space-y-1">
-    <li>Simulent de vrais parcours utilisateur (login, formulaire, paiement).</li>
-    <li>Impliquent toute l’application : front, back, base de données.</li>
-    <li>Lents et fragiles, donc volontairement peu nombreux.</li>
-  </ul>
-
-  <p class="text-sm text-gray-700 mt-3">
-    Bonne pratique CI : exécuter ces tests uniquement sur les scénarios
-    critiques, souvent avant une release ou en exécution planifiée.
-  </p>
-</div>
-
-
-  <!-- conclusion -->
-  <h4 class="font-bold text-lg text-blue-700 mt-2 " > Dans le pipeline CI, chaque niveau a son rôle.</h4>
-  <ul class="list-disc list-inside mt-3 text-sm text-gray-600 space-y-1">
-    <li> Le lint empêche le mauvais code d’entrer.</li>
-    <li> Les tests unitaires vérifient la logique.</li>
-    <li> Les tests d’intégration vérifient que tout fonctionne ensemble.</li>
-    <li> Les tests End-to-End valident le système complet.</li>
-  </ul>
-
-
-</div>
-
-
-      <!--Le Pipeline CI -->
-      <h3 class="text-2xl font-bold mb-4 text-gray-800">Le Pipeline CI : Les Étapes Techniques</h3>
-      <p class="mb-4 text-gray-600">Voici ce qui se passe réellement dans le serveur CI à chaque git push.</p>
-      
-      <div class="bg-gray-900 text-gray-100 p-6 rounded-lg font-mono text-sm space-y-4 mb-8">
-        <div>
-          <span class="text-yellow-400 font-bold">Étape 1 : Le Déclencheur (Trigger)</span>
-          <p class="ml-4 text-gray-400">Le serveur CI détecte un changement sur le dépôt Git (via Webhook).</p>
+      <h3 class="text-2xl font-bold mb-4 text-gray-800">👉 C'est quoi un conteneur ?</h3>
+      <div class="bg-white p-6 rounded-lg shadow-md mb-8">
+        <p class="mb-4 text-gray-700">
+          Un conteneur = un mini-ordinateur qui contient :
+        </p>
+        <div class="grid md:grid-cols-2 gap-4">
+          <div class="space-y-3">
+            <div class="flex items-center bg-blue-50 p-3 rounded-lg">
+              <span class="text-2xl mr-3">💻</span>
+              <span class="font-semibold">ton application</span>
+            </div>
+            <div class="flex items-center bg-green-50 p-3 rounded-lg">
+              <span class="text-2xl mr-3">📦</span>
+              <span class="font-semibold">les dépendances</span>
+            </div>
+          </div>
+          <div class="space-y-3">
+            <div class="flex items-center bg-purple-50 p-3 rounded-lg">
+              <span class="text-2xl mr-3">⚙️</span>
+              <span class="font-semibold">les configurations</span>
+            </div>
+            <div class="flex items-center bg-orange-50 p-3 rounded-lg">
+              <span class="text-2xl mr-3">🌍</span>
+              <span class="font-semibold">l'environnement nécessaire</span>
+            </div>
+          </div>
         </div>
-        <div>
-          <span class="text-yellow-400 font-bold">Étape 2 : Linting & Analyse Statique</span>
-          <p class="ml-4 text-gray-400">Vérifier la syntaxe. Si ça échoue, stop.</p>
-        </div>
-        <div>
-          <span class="text-yellow-400 font-bold">Étape 3 : Tests Unitaires</span>
-          <p class="ml-4 text-gray-400">Lancement de milliers de petits tests en parallèle (Jest, JUnit).</p>
-        </div>
-        <div>
-          <span class="text-yellow-400 font-bold">Étape 4 : Tests d'Intégration</span>
-          <p class="ml-4 text-gray-400">Vérification avec base de données temporaire.</p>
-        </div>
-        <div>
-          <span class="text-yellow-400 font-bold">Étape 5 : Build & Packaging</span>
-          <p class="ml-4 text-gray-400">Compilation et création de l'Artéfact (Image Docker, .jar).</p>
+        <div class="mt-6 bg-indigo-50 p-4 rounded-lg border-l-4 border-indigo-500">
+          <p class="text-indigo-800 font-medium">
+            → Il garantit que l'application fonctionne <strong>partout de la même manière</strong>.
+          </p>
         </div>
       </div>
 
-      <!-- resume -->
-    <div class="bg-indigo-50 p-6 rounded-lg border border-indigo-100 mb-8">
-      <p class="text-xl font-bold text-indigo-700">
-        Le pipeline d'Intégration Continue (CI) vise à automatiser
-        la construction et le test immédiat de chaque changement de code,
-        arantissant ainsi la détection précoce des erreurs (Fail Fast) et l'établissement 
-        d'une confiance constante dans la qualité et la préparation du produit pour le déploiement.
-    </p>
-    </div>
-      <!--Jenkins -->
-      <h3 class="text-2xl font-bold mb-4 text-gray-800">JENKINS : Le Chef d'Orchestre du DevOps</h3>
-      
-      <div class="bg-indigo-50 p-6 rounded-lg mb-8 border-l-4 border-indigo-500">
-        <p class="mb-4 text-indigo-900 italic font-medium">
-          "Si la CI/CD était une usine, Jenkins en serait le contremaître. Il ne fabrique pas le produit lui-même, mais il crie les ordres pour que les machines le fassent."
-        </p>
-        
-        <h4 class="font-bold text-indigo-800 text-lg mb-2">1. C'est quoi exactement ?</h4>
-        <p class="mb-4 text-indigo-900">
-          Jenkins n'est pas juste un "serveur". C'est un <strong>Orchestrateur d'Automatisation</strong>. C'est un projet Open Source (gratuit), écrit en Java, et c'est le standard absolu du marché (utilisé par 80% des grandes entreprises).
-        </p>
-        <div class="bg-white p-4 rounded-lg shadow-sm mb-4">
-          <p class="text-gray-700"><strong>🎩 L'analogie :</strong> Imaginez un Majordome Suisse. Il a 1000 bras, il parle toutes les langues (Java, Python, Docker...) et il travaille 24h/24 sans jamais se plaindre.</p>
-        </div>
-
-        <h4 class="font-bold text-indigo-800 text-lg mb-4">2. Pourquoi est-il incontournable ? (Les 3 Piliers)</h4>
-        
-        <div class="space-y-4">
-          <div class="bg-white p-4 rounded-lg shadow-sm">
-            <h5 class="font-bold text-indigo-700 mb-2">A. L'Architecture "Cerveau & Muscles" (Master / Agent)</h5>
-            <p class="text-sm text-gray-700 mb-2">C'est sa plus grande force architecturale. Jenkins sépare la réflexion de l'action.</p>
-            <ul class="list-disc list-inside text-sm text-gray-600 space-y-1">
-              <li><strong>Le Controller (Le Cerveau) :</strong> Il gère l'interface web, les utilisateurs et planifie le travail. Il ne doit jamais lancer de compilations lourdes lui-même.</li>
-              <li><strong>Les Agents (Les Muscles) :</strong> Ce sont des serveurs esclaves (ou des conteneurs éphémères) qui exécutent les tâches sales.</li>
-            </ul>
-            <p class="text-sm text-gray-500 mt-2 italic">👉 Avantage : Vous pouvez avoir un Agent Windows pour compiler du .NET, un Agent Linux pour du Docker, et un Agent Mac pour une appli iOS. Jenkins pilote les trois en même temps.</p>
-          </div>
-
-          <div class="bg-white p-4 rounded-lg shadow-sm">
-            <h5 class="font-bold text-indigo-700 mb-2">B. Le "Couteau Suisse" (Les Plugins)</h5>
-            <p class="text-sm text-gray-700 mb-2">La puissance de Jenkins ne vient pas du logiciel lui-même, mais de ses <strong>1800+ Plugins</strong>. Vous utilisez AWS ? Il y a un plugin. Slack ? Un plugin. Kubernetes ? Un plugin.</p>
-            <p class="text-sm font-bold text-indigo-600">Règle d'or : "Si un outil DevOps existe, il existe un plugin Jenkins pour lui parler."</p>
-          </div>
-
-          <div class="bg-white p-4 rounded-lg shadow-sm">
-            <h5 class="font-bold text-indigo-700 mb-2">C. La Révolution : "Pipeline as Code"</h5>
-            <p class="text-sm text-gray-700 mb-2">Avant, on configurait Jenkins en cliquant partout dans l'interface (ce qu'on appelle péjorativement le "ClickOps"). C'était fragile et impossible à sauvegarder.</p>
-            <p class="text-sm text-gray-700 mb-2">Aujourd'hui, nous utilisons le <code>Jenkinsfile</code>.</p>
-            <ul class="list-disc list-inside text-sm text-gray-600 space-y-1">
-              <li>C'est un fichier texte qui décrit tout le pipeline.</li>
-              <li>Il vit <strong>DANS</strong> votre dépôt Git, à côté de votre code source.</li>
-            </ul>
-            <p class="text-sm text-gray-500 mt-2 italic">👉 Bénéfice : Si le serveur Jenkins brûle demain, on en installe un nouveau, on lui donne l'URL du Git, et il sait instantanément comment reconstruire le projet. C'est l'immortalité de la configuration.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- GitHub Actions -->
-      <h3 class="text-2xl font-bold mb-4 text-gray-800">L'Alternative Moderne : GitHub Actions</h3>
-      <p class="mb-4 text-gray-700">
-        Si Jenkins est le "père", GitHub Actions est le "fils prodige". C'est un outil SaaS intégré à GitHub, sans serveur à gérer.
-      </p>
-
+      <!-- Why Docker is Essential -->
+      <h2 class="text-3xl font-bold mb-6 text-indigo-700">🚀 Pourquoi Docker est essentiel dans DevOps ?</h2>
       <div class="overflow-x-auto shadow-lg rounded-lg mb-8">
         <table class="min-w-full bg-white">
-          <thead class="bg-gray-800 text-white">
+          <thead class="bg-gradient-to-r from-indigo-600 to-blue-600 text-white">
             <tr>
-              <th class="py-3 px-4 text-left">Critère</th>
-              <th class="py-3 px-4 text-left">Jenkins 👴</th>
-              <th class="py-3 px-4 text-left">GitHub Actions 🚀</th>
+              <th class="py-3 px-6 text-left">Besoin DevOps</th>
+              <th class="py-3 px-6 text-left">Comment Docker aide ?</th>
             </tr>
           </thead>
-          <tbody class="text-gray-700 text-sm">
-            <tr class="border-b"><td class="py-3 px-4 font-bold">Type</td><td class="py-3 px-4">Serveur (Self-Hosted)</td><td class="py-3 px-4">SaaS (Cloud)</td></tr>
-            <tr class="border-b"><td class="py-3 px-4 font-bold">Config</td><td class="py-3 px-4">Jenkinsfile (Groovy)</td><td class="py-3 px-4">Workflow .yaml</td></tr>
-            <tr class="border-b"><td class="py-3 px-4 font-bold">Maintenance</td><td class="py-3 px-4">Élevée</td><td class="py-3 px-4">Nulle</td></tr>
-            <tr class="border-b"><td class="py-3 px-4 font-bold">Cible</td><td class="py-3 px-4">Grandes Entreprises</td><td class="py-3 px-4">Startups, Moderne</td></tr>
+          <tbody class="text-gray-700">
+            <tr class="border-b bg-gray-50">
+              <td class="py-3 px-6 font-bold">Automatiser</td>
+              <td class="py-3 px-6">Image + pipeline</td>
+            </tr>
+            <tr class="border-b">
+              <td class="py-3 px-6 font-bold">Déployer rapidement</td>
+              <td class="py-3 px-6">Conteneurs très rapides</td>
+            </tr>
+            <tr class="border-b bg-gray-50">
+              <td class="py-3 px-6 font-bold">Éviter les bugs "ça marche chez moi"</td>
+              <td class="py-3 px-6">Environnement standard</td>
+            </tr>
+            <tr class="border-b">
+              <td class="py-3 px-6 font-bold">Scalabilité</td>
+              <td class="py-3 px-6">Lancer plusieurs conteneurs</td>
+            </tr>
+            <tr class="border-b bg-gray-50">
+              <td class="py-3 px-6 font-bold">CI/CD</td>
+              <td class="py-3 px-6">CI = build docker, CD = déploiement docker</td>
+            </tr>
           </tbody>
         </table>
       </div>
 
-      <!-- Guide GitHub Actions -->
-      <h3 class="text-2xl font-bold mb-4 text-gray-800">GUIDE PRATIQUE : GitHub Actions</h3>
-      <p class="mb-4 text-gray-600">Tout se passe dans <code>.github/workflows/mon-pipeline.yml</code>.</p>
+      <!-- Key Concepts -->
+      <h2 class="text-3xl font-bold mb-6 text-indigo-700">🧠 Concepts clés de Docker</h2>
+      <div class="space-y-6 mb-8">
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden border-l-8 border-blue-500">
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-3 text-gray-800">🔹 Image Docker</h3>
+            <p class="text-gray-700 mb-3">
+              Un modèle qui contient le code + les dépendances.
+            </p>
+            <div class="bg-gray-50 p-3 rounded-lg">
+              <p class="text-sm text-gray-600">
+                <strong>Exemple :</strong> <code class="bg-gray-200 px-2 py-1 rounded">python:3.11</code>, 
+                <code class="bg-gray-200 px-2 py-1 rounded">nginx</code>, 
+                <code class="bg-gray-200 px-2 py-1 rounded">mysql:8</code>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden border-l-8 border-green-500">
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-3 text-gray-800">🔹 Conteneur Docker</h3>
+            <p class="text-gray-700">
+              Une <strong>instance</strong> d'une image (comme "lancer l'image").
+            </p>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden border-l-8 border-purple-500">
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-3 text-gray-800">🔹 Dockerfile</h3>
+            <p class="text-gray-700 mb-3">
+              Un fichier qui décrit comment construire une image.
+            </p>
+            <div class="bg-gray-50 p-4 rounded-lg">
+              <p class="text-sm font-semibold text-gray-700 mb-2">Exemple simple :</p>
+              <pre class="bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto text-sm"><code>FROM python:3.11
+WORKDIR /app
+COPY . .
+RUN pip install -r requirements.txt
+CMD ["python", "app.py"]</code></pre>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden border-l-8 border-orange-500">
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-3 text-gray-800">🔹 Docker Hub</h3>
+            <p class="text-gray-700">
+              Un magasin d'images (comme Play Store mais pour Docker).
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Workflow -->
+      <h2 class="text-3xl font-bold mb-6 text-indigo-700">🏗️ Workflow DevOps avec Docker</h2>
+      <div class="bg-white p-6 rounded-lg shadow-lg mb-8">
+        <div class="space-y-4">
+          <div class="flex items-center">
+            <div class="bg-indigo-600 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold mr-4">1</div>
+            <p class="text-gray-700">Le développeur écrit son code</p>
+          </div>
+          <div class="flex items-center">
+            <div class="bg-indigo-600 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold mr-4">2</div>
+            <p class="text-gray-700">Il crée une image Docker</p>
+          </div>
+          <div class="flex items-center">
+            <div class="bg-indigo-600 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold mr-4">3</div>
+            <p class="text-gray-700">Il pousse l'image vers Docker Hub</p>
+          </div>
+          <div class="flex items-center">
+            <div class="bg-indigo-600 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold mr-4">4</div>
+            <p class="text-gray-700">CI/CD lance l'image sur le serveur</p>
+          </div>
+          <div class="flex items-center">
+            <div class="bg-green-600 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold mr-4">5</div>
+            <p class="text-gray-700 font-semibold">L'application est déployée automatiquement</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-gray-50 p-6 rounded-lg mb-8 text-center">
+        <p class="text-xl font-mono text-gray-700">
+          <span class="font-bold text-indigo-600">Code</span> → 
+          <span class="font-bold text-blue-600">Dockerfile</span> → 
+          <span class="font-bold text-purple-600">Image</span> → 
+          <span class="font-bold text-green-600">Registry</span> → 
+          <span class="font-bold text-orange-600">Déploiement</span> → 
+          <span class="font-bold text-red-600">Prod</span>
+        </p>
+        <p class="mt-4 text-sm text-gray-600">
+          Avec Kubernetes, Docker devient scalable.
+        </p>
+      </div>
+
+      <!-- Practical Workshop -->
+      <h2 class="text-3xl font-bold mb-6 text-indigo-700">🎓 TP Pratique : Créer et déployer une application Flask avec Docker</h2>
       
-      <pre class="bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto mb-8 text-sm"><code>name: Mon Super Pipeline CI
+      <div class="bg-green-50 p-6 rounded-lg border-l-4 border-green-500 mb-8">
+        <h3 class="text-xl font-bold mb-3 text-green-800">🟢 Objectif</h3>
+        <ul class="space-y-2 text-gray-700">
+          <li>→ Créer une application web à partir de zéro</li>
+          <li>→ La mettre dans Docker</li>
+          <li>→ Lancer l'application dans un conteneur</li>
+        </ul>
+      </div>
 
-# 1. Le Déclencheur
-on:
-  push:
-    branches: [ "main" ]
-
-# 2. Les Tâches
-jobs:
-  build-and-test:
-    runs-on: ubuntu-latest
-
-    # 3. Les Étapes
-    steps:
-    # A. Récupérer le code
-    - name: Checkout du code
-      uses: actions/checkout@v3
-
-    # B. Préparer Node.js
-    - name: Setup Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: '18'
+      <!-- Part 1 -->
+      <div class="bg-white p-6 rounded-lg shadow-md mb-6">
+        <h3 class="text-2xl font-bold mb-4 text-indigo-700">🔰 PARTIE 1 – Créer l'application Flask</h3>
         
-    # C. Installer
-    - name: Installation
-      run: npm install
+        <h4 class="font-bold text-lg mb-3 text-gray-800">📁 Étape 1 : Créer ton projet</h4>
+        <p class="mb-3 text-gray-700">Crée un dossier :</p>
+        <pre class="bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto text-sm mb-6"><code>mon_projet
+ ├── app.py
+ ├── requirements.txt
+ └── Dockerfile</code></pre>
 
-    # D. Tests & Qualité
-    - name: Tests & Qualité
-      run: |
-        npm run lint
-        npm test
+        <h4 class="font-bold text-lg mb-3 text-gray-800">📝 Étape 2 : Fichier app.py</h4>
+        <pre class="bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto text-sm mb-6"><code>from flask import Flask
 
-    # E. Build
-    - name: Build Production
-      run: npm run build</code></pre>
+app = Flask(__name__)
 
-      <div class="bg-green-50 p-6 rounded-lg border border-green-100 text-center">
-        <p class="text-green-800 italic font-medium">
-          "GitHub Actions représente la démocratisation du DevOps. Il a supprimé la barrière technique de l'installation de serveur."
+@app.route('/')
+def home():
+    return "Bonjour ! Mon premier projet Docker + Flask !"
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=5000)</code></pre>
+
+        <h4 class="font-bold text-lg mb-3 text-gray-800">📝 Étape 3 : Fichier requirements.txt</h4>
+        <pre class="bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto text-sm"><code>Flask</code></pre>
+      </div>
+
+      <!-- Part 2 -->
+      <div class="bg-white p-6 rounded-lg shadow-md mb-6">
+        <h3 class="text-2xl font-bold mb-4 text-indigo-700">🔰 PARTIE 2 – Dockeriser le projet</h3>
+        
+        <h4 class="font-bold text-lg mb-3 text-gray-800">📝 Étape 4 : Créer le fichier Dockerfile</h4>
+        <pre class="bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto text-sm"><code># 1. Utiliser une image python officielle
+FROM python:3.11
+
+# 2. Définir le dossier de travail
+WORKDIR /app
+
+# 3. Copier les fichiers
+COPY requirements.txt .
+RUN pip install -r requirements.txt
+COPY . .
+
+# 4. Exposer le port
+EXPOSE 5000
+
+# 5. Lancer l'application
+CMD ["python", "app.py"]</code></pre>
+      </div>
+
+      <!-- Part 3 -->
+      <div class="bg-white p-6 rounded-lg shadow-md mb-6">
+        <h3 class="text-2xl font-bold mb-4 text-indigo-700">🔰 PARTIE 3 – Créer l'image Docker</h3>
+        <p class="mb-3 text-gray-700">Ouvre ton terminal dans le dossier du projet.</p>
+        <h4 class="font-bold text-gray-800 mb-2">👉 Construire l'image :</h4>
+        <pre class="bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto text-sm"><code>docker build -t flask-app .</code></pre>
+      </div>
+
+      <!-- Part 4 -->
+      <div class="bg-white p-6 rounded-lg shadow-md mb-6">
+        <h3 class="text-2xl font-bold mb-4 text-indigo-700">🔰 PARTIE 4 – Lancer un conteneur</h3>
+        <pre class="bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto text-sm mb-4"><code>docker run -d -p 5000:5000 flask-app</code></pre>
+        
+        <div class="bg-green-50 p-4 rounded-lg border border-green-200">
+          <p class="text-green-800 mb-2"><strong>✔️ Ensuite ouvre dans ton navigateur :</strong></p>
+          <p class="text-xl font-mono text-green-700">👉 http://localhost:5000</p>
+          <p class="mt-3 text-gray-700">Tu dois voir :</p>
+          <p class="text-lg font-semibold text-indigo-700">"Bonjour ! Mon premier projet Docker + Flask !"</p>
+        </div>
+      </div>
+
+      <!-- Part 5 -->
+      <div class="bg-white p-6 rounded-lg shadow-md mb-8">
+        <h3 class="text-2xl font-bold mb-4 text-indigo-700">🔰 PARTIE 5 – Modifier ton app</h3>
+        <p class="mb-3 text-gray-700">Tu changes app.py, puis :</p>
+        <pre class="bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto text-sm"><code>docker build -t flask-app .
+docker run -d -p 5000:5000 flask-app</code></pre>
+      </div>
+
+      <!-- Conclusion -->
+      <div class="bg-gradient-to-r from-indigo-600 to-purple-600 text-white p-8 rounded-lg shadow-xl">
+        <h2 class="text-3xl font-bold mb-4">📌 Conclusion</h2>
+        <p class="text-lg mb-4">Docker est indispensable dans DevOps car il :</p>
+        <div class="grid md:grid-cols-2 gap-4">
+          <div class="bg-white/10 p-4 rounded-lg">
+            <p class="font-semibold">✨ simplifie le développement</p>
+          </div>
+          <div class="bg-white/10 p-4 rounded-lg">
+            <p class="font-semibold">🔒 sécurise le déploiement</p>
+          </div>
+          <div class="bg-white/10 p-4 rounded-lg">
+            <p class="font-semibold">⚡ accélère les pipelines CI/CD</p>
+          </div>
+          <div class="bg-white/10 p-4 rounded-lg">
+            <p class="font-semibold">🌍 rend les applications portables et scalables</p>
+          </div>
+        </div>
+      </div>
+    `
+  },
+  {
+    id: 'gitlab-ci',
+    category: 'Outils et Automatisation',
+    title: '🦊 GitLab CI/CD',
+    timing: '3h',
+    icon: GitBranch,
+    content: `
+      <h2 class="text-3xl font-bold mb-6 text-indigo-700">🦊 GitLab CI/CD : La Plateforme All-in-One</h2>
+
+      <!-- Introduction -->
+      <div class="bg-gradient-to-r from-orange-50 to-purple-50 p-6 rounded-lg shadow-lg mb-8 border-l-4 border-orange-500">
+        <h3 class="text-2xl font-bold mb-4 text-gray-800">Pourquoi GitLab est le Leader du DevOps ?</h3>
+        <p class="mb-4 text-gray-700 text-lg leading-relaxed">
+          GitLab est considéré comme l'outil le plus <strong>complet</strong> du marché DevOps. 
+          Contrairement à GitHub + GitHub Actions ou Jenkins séparés, GitLab offre une plateforme <strong>"All-in-One"</strong> :
+        </p>
+        <div class="grid md:grid-cols-4 gap-4 mt-4">
+          <div class="bg-white p-3 rounded-lg text-center shadow-sm">
+            <div class="text-2xl mb-1">📦</div>
+            <p class="text-sm font-semibold text-gray-700">Gestion du Code</p>
+          </div>
+          <div class="bg-white p-3 rounded-lg text-center shadow-sm">
+            <div class="text-2xl mb-1">🔄</div>
+            <p class="text-sm font-semibold text-gray-700">CI/CD Intégré</p>
+          </div>
+          <div class="bg-white p-3 rounded-lg text-center shadow-sm">
+            <div class="text-2xl mb-1">🔒</div>
+            <p class="text-sm font-semibold text-gray-700">Sécurité (SAST/DAST)</p>
+          </div>
+          <div class="bg-white p-3 rounded-lg text-center shadow-sm">
+            <div class="text-2xl mb-1">📋</div>
+            <p class="text-sm font-semibold text-gray-700">Gestion de Projet</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- PARTIE 1: Fondamentaux CI -->
+      <h2 class="text-3xl font-bold mb-6 text-orange-600">📚 PARTIE 1 : Fondamentaux de la CI (Intégration Continue)</h2>
+
+      <!-- Définitions -->
+      <div class="grid md:grid-cols-2 gap-6 mb-8">
+        <div class="bg-white p-6 rounded-xl shadow-lg border-l-8 border-blue-500">
+          <h3 class="text-xl font-bold mb-3 text-blue-800">📖 Définition Académique</h3>
+          <p class="text-gray-700">
+            L'<strong>Intégration Continue (CI)</strong> est une pratique de développement logiciel où les membres d'une équipe 
+            <strong>intègrent fréquemment</strong> leur travail dans un référentiel partagé. Chaque intégration est vérifiée 
+            par une <strong>construction automatisée</strong> (incluant des tests) pour détecter les erreurs d'intégration 
+            le plus rapidement possible.
+          </p>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-lg border-l-8 border-green-500">
+          <h3 class="text-xl font-bold mb-3 text-green-800">🍕 Analogie Simple</h3>
+          <p class="text-gray-700">
+            Imaginez une <strong>pizzeria</strong> avec plusieurs cuisiniers. Chaque cuisinier prépare un ingrédient différent.
+            <br/><br/>
+            <strong>Sans CI :</strong> Tous les ingrédients sont assemblés à la fin → "Oups, le fromage et la sauce ne vont pas ensemble!"
+            <br/><br/>
+            <strong>Avec CI :</strong> À chaque ajout d'ingrédient, on fait un test de goût immédiat → Problèmes détectés tôt !
+          </p>
+        </div>
+      </div>
+
+      <!-- Concepts GitLab -->
+      <h3 class="text-2xl font-bold mb-4 text-gray-800">🔧 Les Concepts Clés de GitLab CI/CD</h3>
+      
+      <div class="overflow-x-auto shadow-lg rounded-lg mb-8">
+        <table class="min-w-full bg-white">
+          <thead class="bg-gradient-to-r from-orange-500 to-purple-600 text-white">
+            <tr>
+              <th class="py-4 px-6 text-left">Concept</th>
+              <th class="py-4 px-6 text-left">Description</th>
+              <th class="py-4 px-6 text-left">Analogie</th>
+            </tr>
+          </thead>
+          <tbody class="text-gray-700">
+            <tr class="border-b bg-gray-50">
+              <td class="py-4 px-6 font-bold text-orange-600">🔄 Pipeline</td>
+              <td class="py-4 px-6">L'ensemble du processus CI/CD. Contient tous les <strong>stages</strong> et <strong>jobs</strong>.</td>
+              <td class="py-4 px-6">La chaîne de montage complète d'une usine automobile.</td>
+            </tr>
+            <tr class="border-b">
+              <td class="py-4 px-6 font-bold text-purple-600">📊 Stages</td>
+              <td class="py-4 px-6">Les <strong>phases séquentielles</strong> du pipeline (build → test → deploy). S'exécutent dans l'ordre.</td>
+              <td class="py-4 px-6">Les départements de l'usine : Soudure → Peinture → Assemblage.</td>
+            </tr>
+            <tr class="border-b bg-gray-50">
+              <td class="py-4 px-6 font-bold text-blue-600">⚙️ Jobs</td>
+              <td class="py-4 px-6">Les <strong>tâches individuelles</strong> à l'intérieur d'un stage. Les jobs d'un même stage s'exécutent <strong>en parallèle</strong>.</td>
+              <td class="py-4 px-6">Les ouvriers dans chaque département qui travaillent simultanément.</td>
+            </tr>
+            <tr class="border-b">
+              <td class="py-4 px-6 font-bold text-green-600">🏃 GitLab Runner</td>
+              <td class="py-4 px-6">L'<strong>agent d'exécution</strong> qui exécute physiquement les jobs. Peut être partagé ou dédié.</td>
+              <td class="py-4 px-6">Les machines/robots de l'usine qui font le travail réel.</td>
+            </tr>
+            <tr class="border-b bg-gray-50">
+              <td class="py-4 px-6 font-bold text-red-600">📦 Artifacts</td>
+              <td class="py-4 px-6">Les <strong>fichiers produits</strong> par un job (ex: build, rapports) qui peuvent être téléchargés ou passés entre jobs.</td>
+              <td class="py-4 px-6">Les pièces produites qui passent au département suivant.</td>
+            </tr>
+            <tr class="border-b">
+              <td class="py-4 px-6 font-bold text-yellow-600">💾 Cache</td>
+              <td class="py-4 px-6">Stockage <strong>réutilisable entre pipelines</strong> pour accélérer les builds (ex: node_modules).</td>
+              <td class="py-4 px-6">L'entrepôt de pièces communes qu'on ne refabrique pas à chaque voiture.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Stratégie Fail Fast -->
+      <h3 class="text-2xl font-bold mb-4 text-gray-800">⚡ La Stratégie "Fail Fast" : Pourquoi elle est Vitale</h3>
+      
+      <div class="bg-red-50 p-6 rounded-lg border-l-4 border-red-500 mb-6">
+        <h4 class="text-xl font-bold mb-3 text-red-800">🎯 Principe Fondamental</h4>
+        <p class="text-gray-700 mb-4">
+          <strong>"Fail Fast"</strong> signifie : <em>"Si quelque chose doit échouer, qu'il échoue le plus tôt possible."</em>
+        </p>
+        <div class="grid md:grid-cols-2 gap-4">
+          <div class="bg-white p-4 rounded-lg">
+            <h5 class="font-bold text-red-700 mb-2">❌ Sans Fail Fast</h5>
+            <ul class="text-sm text-gray-600 space-y-1">
+              <li>• Erreur découverte après 30 min de build</li>
+              <li>• Tests longs exécutés pour rien</li>
+              <li>• Déploiement raté en production</li>
+              <li>• Coût de correction : <strong>10x plus élevé</strong></li>
+            </ul>
+          </div>
+          <div class="bg-white p-4 rounded-lg">
+            <h5 class="font-bold text-green-700 mb-2">✅ Avec Fail Fast</h5>
+            <ul class="text-sm text-gray-600 space-y-1">
+              <li>• Lint échoue en 10 secondes → Stop</li>
+              <li>• Feedback immédiat au développeur</li>
+              <li>• Ressources économisées</li>
+              <li>• Coût de correction : <strong>minimal</strong></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-gray-100 p-6 rounded-lg mb-8">
+        <h4 class="font-bold text-gray-800 mb-3">📐 Ordre Optimal des Stages (Fail Fast)</h4>
+        <div class="flex flex-wrap items-center justify-center gap-2 text-center">
+          <div class="bg-blue-100 px-4 py-2 rounded-lg">
+            <span class="font-bold text-blue-700">1. Lint</span>
+            <p class="text-xs text-gray-600">~10s</p>
+          </div>
+          <span class="text-2xl">→</span>
+          <div class="bg-green-100 px-4 py-2 rounded-lg">
+            <span class="font-bold text-green-700">2. Build</span>
+            <p class="text-xs text-gray-600">~1min</p>
+          </div>
+          <span class="text-2xl">→</span>
+          <div class="bg-yellow-100 px-4 py-2 rounded-lg">
+            <span class="font-bold text-yellow-700">3. Unit Tests</span>
+            <p class="text-xs text-gray-600">~2min</p>
+          </div>
+          <span class="text-2xl">→</span>
+          <div class="bg-purple-100 px-4 py-2 rounded-lg">
+            <span class="font-bold text-purple-700">4. Security Scan</span>
+            <p class="text-xs text-gray-600">~3min</p>
+          </div>
+          <span class="text-2xl">→</span>
+          <div class="bg-red-100 px-4 py-2 rounded-lg">
+            <span class="font-bold text-red-700">5. Integration</span>
+            <p class="text-xs text-gray-600">~5min</p>
+          </div>
+        </div>
+        <p class="text-center text-sm text-gray-600 mt-4">
+          💡 Les étapes rapides en premier → Feedback en secondes, pas en minutes !
+        </p>
+      </div>
+
+
+      <!-- GitLab CI vs Jenkins: Battle des Géants -->
+      <h3 class="text-2xl font-bold mb-4 text-gray-800">⚔️ GitLab CI vs Jenkins : Le Choix Stratégique</h3>
+      
+      <div class="bg-gradient-to-r from-orange-50 to-blue-50 p-6 rounded-lg shadow-md mb-8 border-l-4 border-purple-600">
+        <p class="text-gray-700 text-lg mb-4">
+          <strong>Jenkins</strong> a été le roi de la CI/CD pendant des années. Mais <strong>GitLab CI</strong> représente 
+          une nouvelle génération d'outils intégrés. Lequel choisir ?
+        </p>
+        <p class="text-gray-600">
+          La réponse dépend de votre contexte : infrastructure existante, équipe, et besoins de personnalisation.
+        </p>
+      </div>
+
+      <!-- Comparaison détaillée -->
+      <div class="grid md:grid-cols-2 gap-6 mb-8">
+        
+        <!-- GitLab CI Card -->
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden border-t-4 border-orange-500">
+          <div class="bg-gradient-to-r from-orange-500 to-purple-600 p-4">
+            <h4 class="text-white text-xl font-bold flex items-center">
+              🦊 GitLab CI/CD
+              <span class="ml-2 text-xs bg-white/20 px-2 py-1 rounded">Moderne</span>
+            </h4>
+          </div>
+          <div class="p-6">
+            <h5 class="font-bold text-green-700 mb-3">✅ Points Forts</h5>
+            <ul class="space-y-2 text-sm text-gray-700 mb-4">
+              <li>🎯 <strong>Tout-en-un</strong> : Code + CI/CD + Registry + Sécurité dans une seule plateforme</li>
+              <li>📝 <strong>Configuration simple</strong> : Un seul fichier YAML (.gitlab-ci.yml)</li>
+              <li>🚀 <strong>Démarrage rapide</strong> : Pas d'infrastructure à installer, runners cloud disponibles</li>
+              <li>🔒 <strong>Sécurité intégrée</strong> : SAST, DAST, scan de dépendances inclus</li>
+              <li>🎨 <strong>UI moderne</strong> : Interface intuitive, visualisation des pipelines claire</li>
+              <li>🔄 <strong>Auto DevOps</strong> : Templates prêts à l'emploi pour démarrer en minutes</li>
+              <li>📊 <strong>Environnements natifs</strong> : Gestion des déploiements dev/staging/prod intégrée</li>
+            </ul>
+            
+            <h5 class="font-bold text-red-700 mb-3">⚠️ Limites</h5>
+            <ul class="space-y-2 text-sm text-gray-700">
+              <li>💰 Version cloud limitée en minutes gratuites (400 min/mois)</li>
+              <li>🔧 Moins de flexibilité extrême que Jenkins pour des cas ultra-spécifiques</li>
+              <li>🏢 Nécessite GitLab comme plateforme de code (migration si vous êtes sur GitHub/Bitbucket)</li>
+            </ul>
+
+            <div class="mt-4 bg-orange-50 p-3 rounded">
+              <p class="text-sm font-semibold text-orange-800">🎯 Idéal pour :</p>
+              <p class="text-xs text-gray-600">Nouvelles équipes, startups, projets greenfield, équipes cherchant la simplicité</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Jenkins Card -->
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden border-t-4 border-blue-700">
+          <div class="bg-gradient-to-r from-blue-700 to-indigo-800 p-4">
+            <h4 class="text-white text-xl font-bold flex items-center">
+              🎩 Jenkins
+              <span class="ml-2 text-xs bg-white/20 px-2 py-1 rounded">Vétéran</span>
+            </h4>
+          </div>
+          <div class="p-6">
+            <h5 class="font-bold text-green-700 mb-3">✅ Points Forts</h5>
+            <ul class="space-y-2 text-sm text-gray-700 mb-4">
+              <li>🏆 <strong>Mature et éprouvé</strong> : 15+ ans d'existence, ultra stable</li>
+              <li>🔌 <strong>Écosystème massif</strong> : 1800+ plugins pour tout faire</li>
+              <li>🛠️ <strong>Personnalisation extrême</strong> : Contrôle total sur chaque aspect</li>
+              <li>🌍 <strong>Indépendant</strong> : Fonctionne avec GitHub, GitLab, Bitbucket, SVN...</li>
+              <li>🆓 <strong>100% gratuit</strong> : Open source, pas de limite de minutes</li>
+              <li>🏢 <strong>Enterprise ready</strong> : Utilisé par les plus grandes entreprises mondiales</li>
+              <li>👥 <strong>Communauté énorme</strong> : Solutions disponibles pour tout problème</li>
+            </ul>
+            
+            <h5 class="font-bold text-red-700 mb-3">⚠️ Limites</h5>
+            <ul class="space-y-2 text-sm text-gray-700">
+              <li>🏗️ <strong>Infrastructure lourde</strong> : Nécessite serveur dédié, maintenance active</li>
+              <li>⚙️ <strong>Configuration complexe</strong> : Groovy, UI vieillissante, courbe d'apprentissage élevée</li>
+              <li>🔒 <strong>Sécurité manuelle</strong> : Pas de scan de sécurité natif, tout via plugins</li>
+              <li>📦 <strong>Pas de registry intégré</strong> : Nécessite outils externes (Nexus, Artifactory)</li>
+              <li>🔧 <strong>Maintenance importante</strong> : Plugins à mettre à jour, compatibilité à gérer</li>
+              <li>⏱️ <strong>Démarrage lent</strong> : Plusieurs jours de configuration pour un pipeline complet</li>
+            </ul>
+
+            <div class="mt-4 bg-blue-50 p-3 rounded">
+              <p class="text-sm font-semibold text-blue-800">🎯 Idéal pour :</p>
+              <p class="text-xs text-gray-600">Grandes entreprises, systèmes legacy, besoins de customisation extrême, équipes DevOps expertes</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      
+
+      <!-- Cas d'usage recommandés -->
+      <div class="bg-gradient-to-r from-purple-50 to-blue-50 p-6 rounded-lg shadow-md mb-8">
+        <h4 class="text-xl font-bold mb-4 text-gray-800">🎯 Quel outil choisir ? Guide de décision</h4>
+        
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-white p-4 rounded-lg shadow">
+            <h5 class="font-bold text-orange-600 mb-3 flex items-center">
+              <span class="text-2xl mr-2">🦊</span> Choisissez GitLab CI si...
+            </h5>
+            <ul class="space-y-2 text-sm text-gray-700">
+              <li>✅ Vous démarrez un nouveau projet</li>
+              <li>✅ Vous voulez une solution "tout-en-un" simple</li>
+              <li>✅ Vous n'avez pas d'équipe DevOps dédiée</li>
+              <li>✅ La sécurité intégrée est prioritaire</li>
+              <li>✅ Vous voulez une UI moderne et claire</li>
+              <li>✅ Vous préférez le cloud au self-hosted</li>
+              <li>✅ Vous utilisez déjà GitLab pour le code</li>
+            </ul>
+          </div>
+
+          <div class="bg-white p-4 rounded-lg shadow">
+            <h5 class="font-bold text-blue-700 mb-3 flex items-center">
+              <span class="text-2xl mr-2">🎩</span> Choisissez Jenkins si...
+            </h5>
+            <ul class="space-y-2 text-sm text-gray-700">
+              <li>✅ Vous avez une infrastructure legacy complexe</li>
+              <li>✅ Vous avez besoin de personnalisation extrême</li>
+              <li>✅ Vous avez une équipe DevOps experte</li>
+              <li>✅ Jenkins est déjà en place et fonctionne</li>
+              <li>✅ Vous devez supporter des outils anciens (SVN, CVS...)</li>
+              <li>✅ Vous voulez un contrôle total sans dépendance cloud</li>
+              <li>✅ Vous utilisez plusieurs plateformes Git différentes</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="mt-6 bg-yellow-50 border-l-4 border-yellow-500 p-4 rounded">
+          <p class="text-sm text-gray-700">
+            <strong>💡 Conseil de l'architecte :</strong> 
+            Pour 80% des projets modernes, <strong>GitLab CI</strong> est le meilleur choix : plus simple, plus rapide, moins coûteux.
+            <strong>Jenkins</strong> reste pertinent pour les infrastructures complexes existantes ou les besoins très spécifiques.
+          </p>
+        </div>
+      </div>
+
+      
+      
+
+      <!-- Schéma du Flux CI -->
+      <h3 class="text-2xl font-bold mb-4 text-gray-800">📊 Schéma du Flux CI GitLab</h3>
+      
+      <div class="bg-gray-900 text-gray-100 p-6 rounded-lg mb-8 font-mono text-sm overflow-x-auto">
+        <pre>
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                          🦊 GITLAB CI PIPELINE                               │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                             │
+│   👨‍💻 Developer                                                              │
+│       │                                                                     │
+│       │ git push                                                            │
+│       ▼                                                                     │
+│   ┌─────────────┐                                                           │
+│   │   TRIGGER   │ ◄── Webhook détecte le changement                        │
+│   └──────┬──────┘                                                           │
+│          │                                                                  │
+│          ▼                                                                  │
+│   ╔═══════════════════════════════════════════════════════════════════╗    │
+│   ║                    STAGE 1: BUILD                                  ║    │
+│   ║  ┌──────────────┐                                                  ║    │
+│   ║  │ 🐳 Docker    │ → Image: registry.gitlab.com/project/app:v1.0   ║    │
+│   ║  │    Build     │                                                  ║    │
+│   ║  └──────────────┘                                                  ║    │
+│   ╚══════════════════════════════════════════════════════════════════╝    │
+│          │                                                                  │
+│          ▼                                                                  │
+│   ╔═══════════════════════════════════════════════════════════════════╗    │
+│   ║                    STAGE 2: TEST                                   ║    │
+│   ║  ┌──────────────┐  ┌──────────────┐                                ║    │
+│   ║  │ 🧪 Jest      │  │ 📊 Coverage  │  ← Exécution PARALLÈLE        ║    │
+│   ║  │ Unit Tests   │  │   Report     │                                ║    │
+│   ║  └──────────────┘  └──────────────┘                                ║    │
+│   ╚══════════════════════════════════════════════════════════════════╝    │
+│          │                                                                  │
+│          ▼                                                                  │
+│   ╔═══════════════════════════════════════════════════════════════════╗    │
+│   ║                    STAGE 3: QUALITY                                ║    │
+│   ║  ┌──────────────┐  ┌──────────────┐                                ║    │
+│   ║  │ 🔍 SonarQube │  │ 🛡️ Trivy     │                                ║    │
+│   ║  │ Code Quality │  │ Container   │                                 ║    │
+│   ║  │              │  │ Scan        │                                 ║    │
+│   ║  └──────────────┘  └──────────────┘                                ║    │
+│   ║              │                                                     ║    │
+│   ║              ▼                                                     ║    │
+│   ║      ┌─────────────────┐                                           ║    │
+│   ║      │ 🚨 QUALITY GATE │                                           ║    │
+│   ║      │   Pass/Fail?    │                                           ║    │
+│   ║      └────────┬────────┘                                           ║    │
+│   ╚══════════════════════════════════════════════════════════════════╝    │
+│          │                                                                  │
+│    ┌─────┴─────┐                                                           │
+│    ▼           ▼                                                           │
+│  ❌ FAIL     ✅ PASS                                                        │
+│    │           │                                                           │
+│    │           ▼                                                           │
+│    │    ╔═══════════════════════════════════════════════════════════╗     │
+│    │    ║                 STAGE 4: DEPLOY                            ║     │
+│    │    ║  ┌──────────────┐  ┌──────────────┐                        ║     │
+│    │    ║  │ 🌐 Staging   │  │ 🚀 Production│                        ║     │
+│    │    ║  │ (auto)       │  │ (manual)     │                        ║     │
+│    │    ║  └──────────────┘  └──────────────┘                        ║     │
+│    │    ╚═══════════════════════════════════════════════════════════╝     │
+│    │                                                                       │
+│    ▼                                                                       │
+│  📧 Notification                                                           │
+│  Slack/Email                                                               │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+        </pre>
+      </div>
+
+      <!-- PARTIE 2: Fondamentaux CD -->
+      <h2 class="text-3xl font-bold mb-6 text-purple-600">🚀 PARTIE 2 : Fondamentaux du CD (Déploiement)</h2>
+
+      <!-- Delivery vs Deployment -->
+      <h3 class="text-2xl font-bold mb-4 text-gray-800">🔄 Continuous Delivery vs Continuous Deployment</h3>
+      
+      <div class="overflow-x-auto shadow-lg rounded-lg mb-8">
+        <table class="min-w-full bg-white">
+          <thead class="bg-gradient-to-r from-blue-600 to-purple-600 text-white">
+            <tr>
+              <th class="py-4 px-6 text-left">Aspect</th>
+              <th class="py-4 px-6 text-left">📦 Continuous Delivery</th>
+              <th class="py-4 px-6 text-left">🚀 Continuous Deployment</th>
+            </tr>
+          </thead>
+          <tbody class="text-gray-700">
+            <tr class="border-b bg-gray-50">
+              <td class="py-3 px-6 font-bold">Définition</td>
+              <td class="py-3 px-6">Le code est <strong>prêt</strong> à être déployé à tout moment.</td>
+              <td class="py-3 px-6">Le code est <strong>automatiquement déployé</strong> en production.</td>
+            </tr>
+            <tr class="border-b">
+              <td class="py-3 px-6 font-bold">Validation Humaine</td>
+              <td class="py-3 px-6 text-orange-600 font-semibold">✋ OUI - Bouton "Deploy" manuel</td>
+              <td class="py-3 px-6 text-green-600 font-semibold">🤖 NON - 100% automatique</td>
+            </tr>
+            <tr class="border-b bg-gray-50">
+              <td class="py-3 px-6 font-bold">Risque</td>
+              <td class="py-3 px-6">Faible (humain vérifie)</td>
+              <td class="py-3 px-6">Plus élevé (nécessite tests parfaits)</td>
+            </tr>
+            <tr class="border-b">
+              <td class="py-3 px-6 font-bold">Vitesse</td>
+              <td class="py-3 px-6">Rapide (heures/jours)</td>
+              <td class="py-3 px-6 text-green-600 font-semibold">Ultra-rapide (minutes)</td>
+            </tr>
+            <tr class="border-b bg-gray-50">
+              <td class="py-3 px-6 font-bold">Cas d'usage</td>
+              <td class="py-3 px-6">Banque, Santé, Industries réglementées</td>
+              <td class="py-3 px-6">Netflix, Spotify, Tech companies</td>
+            </tr>
+            <tr class="border-b">
+              <td class="py-3 px-6 font-bold">GitLab Keyword</td>
+              <td class="py-3 px-6"><code class="bg-gray-200 px-2 py-1 rounded">when: manual</code></td>
+              <td class="py-3 px-6"><code class="bg-gray-200 px-2 py-1 rounded">when: on_success</code></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="bg-indigo-50 p-6 rounded-lg border-l-4 border-indigo-500 mb-8">
+        <h4 class="font-bold text-indigo-800 mb-2">💡 La Règle d'Or</h4>
+        <p class="text-gray-700">
+          <strong>Continuous Delivery</strong> = "Je PEUX déployer quand je veux" (bouton disponible).<br/>
+          <strong>Continuous Deployment</strong> = "Ça SE déploie automatiquement" (aucune action humaine).
+        </p>
+      </div>
+
+      <!-- Environnements -->
+      <h3 class="text-2xl font-bold mb-4 text-gray-800">🌐 Les Environnements dans GitLab</h3>
+      
+      <div class="grid md:grid-cols-3 gap-6 mb-8">
+        <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-blue-500">
+          <h4 class="text-xl font-bold mb-3 text-blue-700">🔧 Development</h4>
+          <p class="text-gray-600 text-sm mb-3">Environnement de développement local ou partagé.</p>
+          <ul class="text-sm text-gray-600 space-y-1">
+            <li>• Données fictives</li>
+            <li>• Debug activé</li>
+            <li>• Déploiement auto sur chaque commit</li>
+          </ul>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-yellow-500">
+          <h4 class="text-xl font-bold mb-3 text-yellow-700">🧪 Staging</h4>
+          <p class="text-gray-600 text-sm mb-3">Copie identique de la production.</p>
+          <ul class="text-sm text-gray-600 space-y-1">
+            <li>• Données anonymisées</li>
+            <li>• Tests de performance</li>
+            <li>• Validation QA finale</li>
+          </ul>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-green-500">
+          <h4 class="text-xl font-bold mb-3 text-green-700">🚀 Production</h4>
+          <p class="text-gray-600 text-sm mb-3">L'environnement final accessible aux utilisateurs.</p>
+          <ul class="text-sm text-gray-600 space-y-1">
+            <li>• Données réelles</li>
+            <li>• Monitoring actif</li>
+            <li>• Déploiement manuel ou avec approbation</li>
+          </ul>
+        </div>
+      </div>
+
+      
+
+      <!-- PARTIE 3: Implémentation -->
+      <h2 class="text-3xl font-bold mb-6 text-green-600">⚙️ PARTIE 3 : Implémentation Technique</h2>
+
+      <h3 class="text-2xl font-bold mb-4 text-gray-800">📝 Le fichier .gitlab-ci.yml Complet</h3>
+      
+      <div class="bg-orange-50 p-4 rounded-lg mb-4 border-l-4 border-orange-500">
+        <p class="text-orange-800 text-sm">
+          <strong>📍 Emplacement :</strong> Ce fichier doit être à la <strong>racine</strong> de votre projet Git.
+          <br/>
+          <strong>💡 Conseil :</strong> Les variables sensibles (DOCKER_USER, SONAR_TOKEN) sont définies dans 
+          <em>Settings → CI/CD → Variables</em> de GitLab.
+        </p>
+      </div>
+
+      
+      <!-- Variables de groupe -->
+      <h3 class="text-2xl font-bold mb-4 text-gray-800">🔐 Configuration des Variables GitLab</h3>
+      
+      <div class="bg-white p-6 rounded-lg shadow-md mb-8 border-l-4 border-purple-500">
+        <h4 class="font-bold text-purple-800 mb-3">📍 Où les configurer ?</h4>
+        <p class="text-gray-700 mb-4">
+          <strong>Niveau Projet :</strong> Settings → CI/CD → Variables<br/>
+          <strong>Niveau Groupe :</strong> Group Settings → CI/CD → Variables (partagées entre projets)
+        </p>
+        
+        <div class="overflow-x-auto">
+          <table class="min-w-full bg-gray-50 rounded-lg">
+            <thead class="bg-purple-100">
+              <tr>
+                <th class="py-3 px-4 text-left text-purple-800">Variable</th>
+                <th class="py-3 px-4 text-left text-purple-800">Type</th>
+                <th class="py-3 px-4 text-left text-purple-800">Description</th>
+              </tr>
+            </thead>
+            <tbody class="text-gray-700 text-sm">
+              <tr class="border-b"><td class="py-3 px-4 font-mono">DOCKER_USER</td><td class="py-3 px-4">Protected, Masked</td><td class="py-3 px-4">Nom d'utilisateur Docker Hub</td></tr>
+              <tr class="border-b"><td class="py-3 px-4 font-mono">DOCKER_PASSWORD</td><td class="py-3 px-4">Protected, Masked</td><td class="py-3 px-4">Mot de passe Docker Hub</td></tr>
+              <tr class="border-b"><td class="py-3 px-4 font-mono">SONAR_TOKEN</td><td class="py-3 px-4">Protected, Masked</td><td class="py-3 px-4">Token d'authentification SonarQube</td></tr>
+              <tr class="border-b"><td class="py-3 px-4 font-mono">KUBE_CONTEXT_STAGING</td><td class="py-3 px-4">Protected</td><td class="py-3 px-4">Context Kubernetes pour staging</td></tr>
+              <tr><td class="py-3 px-4 font-mono">KUBE_CONTEXT_PROD</td><td class="py-3 px-4">Protected</td><td class="py-3 px-4">Context Kubernetes pour production</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      
+
+      <!-- Commandes CLI Importantes -->
+      <h3 class="text-2xl font-bold mb-4 text-gray-800">💻 Commandes CLI Essentielles pour la Démo</h3>
+      
+      <div class="overflow-x-auto shadow-lg rounded-lg mb-8">
+        <table class="min-w-full bg-white">
+          <thead class="bg-gradient-to-r from-gray-700 to-gray-900 text-white">
+            <tr>
+              <th class="py-3 px-4 text-left">Commande</th>
+              <th class="py-3 px-4 text-left">Description</th>
+            </tr>
+          </thead>
+          <tbody class="text-gray-700 text-sm font-mono">
+            <tr class="border-b bg-gray-50">
+              <td class="py-3 px-4">git push origin main</td>
+              <td class="py-3 px-4 font-sans">Déclenche le pipeline sur la branche principale</td>
+            </tr>
+            <tr class="border-b">
+              <td class="py-3 px-4">git log --oneline -5</td>
+              <td class="py-3 px-4 font-sans">Voir les 5 derniers commits</td>
+            </tr>
+            <tr class="border-b bg-gray-50">
+              <td class="py-3 px-4">docker images</td>
+              <td class="py-3 px-4 font-sans">Lister les images Docker locales</td>
+            </tr>
+            <tr class="border-b">
+              <td class="py-3 px-4">kubectl get pods -n staging</td>
+              <td class="py-3 px-4 font-sans">Voir les pods déployés en staging</td>
+            </tr>
+            <tr class="border-b bg-gray-50">
+              <td class="py-3 px-4">kubectl logs -f deployment/voting-app -n staging</td>
+              <td class="py-3 px-4 font-sans">Voir les logs en temps réel</td>
+            </tr>
+            <tr class="border-b">
+              <td class="py-3 px-4">npm run test -- --coverage</td>
+              <td class="py-3 px-4 font-sans">Exécuter les tests avec couverture</td>
+            </tr>
+            <tr class="border-b bg-gray-50">
+              <td class="py-3 px-4">npm run lint</td>
+              <td class="py-3 px-4 font-sans">Vérifier la qualité du code</td>
+            </tr>
+            <tr>
+              <td class="py-3 px-4">trivy image voting-app:latest</td>
+              <td class="py-3 px-4 font-sans">Scanner une image pour les vulnérabilités</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Comparaison des outils CI/CD -->
+      <h3 class="text-2xl font-bold mb-4 text-gray-800">📊 Comparaison : GitLab CI vs GitHub Actions vs Jenkins</h3>
+      
+      <div class="overflow-x-auto shadow-lg rounded-lg mb-8">
+        <table class="min-w-full bg-white">
+          <thead class="bg-gradient-to-r from-orange-500 to-purple-600 text-white">
+            <tr>
+              <th class="py-4 px-4 text-left">Critère</th>
+              <th class="py-4 px-4 text-left">🦊 GitLab CI</th>
+              <th class="py-4 px-4 text-left">🐙 GitHub Actions</th>
+              <th class="py-4 px-4 text-left">🎩 Jenkins</th>
+            </tr>
+          </thead>
+          <tbody class="text-gray-700 text-sm">
+            <tr class="border-b bg-gray-50">
+              <td class="py-3 px-4 font-bold">Type</td>
+              <td class="py-3 px-4">SaaS + Self-hosted</td>
+              <td class="py-3 px-4">SaaS (Cloud)</td>
+              <td class="py-3 px-4">Self-hosted uniquement</td>
+            </tr>
+            <tr class="border-b">
+              <td class="py-3 px-4 font-bold">Configuration</td>
+              <td class="py-3 px-4 text-green-600 font-semibold">.gitlab-ci.yml</td>
+              <td class="py-3 px-4">.github/workflows/*.yml</td>
+              <td class="py-3 px-4">Jenkinsfile (Groovy)</td>
+            </tr>
+            <tr class="border-b bg-gray-50">
+              <td class="py-3 px-4 font-bold">Registry intégré</td>
+              <td class="py-3 px-4 text-green-600 font-semibold">✅ Oui (Container + Package)</td>
+              <td class="py-3 px-4">✅ Oui (ghcr.io)</td>
+              <td class="py-3 px-4">❌ Non (externe)</td>
+            </tr>
+            <tr class="border-b">
+              <td class="py-3 px-4 font-bold">Sécurité (SAST/DAST)</td>
+              <td class="py-3 px-4 text-green-600 font-semibold">✅ Intégré nativement</td>
+              <td class="py-3 px-4">⚠️ Via Marketplace</td>
+              <td class="py-3 px-4">⚠️ Via Plugins</td>
+            </tr>
+            <tr class="border-b bg-gray-50">
+              <td class="py-3 px-4 font-bold">Environnements</td>
+              <td class="py-3 px-4 text-green-600 font-semibold">✅ UI native</td>
+              <td class="py-3 px-4">✅ Oui</td>
+              <td class="py-3 px-4">⚠️ Configuration manuelle</td>
+            </tr>
+            <tr class="border-b">
+              <td class="py-3 px-4 font-bold">Kubernetes</td>
+              <td class="py-3 px-4 text-green-600 font-semibold">✅ GitLab Agent</td>
+              <td class="py-3 px-4">⚠️ Via Actions</td>
+              <td class="py-3 px-4">⚠️ Via Plugins</td>
+            </tr>
+            <tr class="border-b bg-gray-50">
+              <td class="py-3 px-4 font-bold">Courbe d'apprentissage</td>
+              <td class="py-3 px-4">Moyenne</td>
+              <td class="py-3 px-4 text-green-600 font-semibold">Facile</td>
+              <td class="py-3 px-4 text-red-600">Difficile</td>
+            </tr>
+            <tr>
+              <td class="py-3 px-4 font-bold">Idéal pour</td>
+              <td class="py-3 px-4 text-green-600 font-semibold">Entreprises (All-in-One)</td>
+              <td class="py-3 px-4">Startups, Open Source</td>
+              <td class="py-3 px-4">Legacy, Grande Customisation</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Conclusion -->
+      <div class="bg-gradient-to-r from-orange-500 to-purple-600 text-white p-8 rounded-lg shadow-xl">
+        <h2 class="text-3xl font-bold mb-4">📌 Récapitulatif</h2>
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-white/10 p-4 rounded-lg">
+            <h4 class="font-bold text-xl mb-2">🔄 CI (Intégration Continue)</h4>
+            <ul class="text-sm space-y-1">
+              <li>✅ Build automatique à chaque push</li>
+              <li>✅ Tests unitaires et d'intégration</li>
+              <li>✅ Analyse de qualité (SonarQube)</li>
+              <li>✅ Scan de sécurité (Trivy)</li>
+            </ul>
+          </div>
+          <div class="bg-white/10 p-4 rounded-lg">
+            <h4 class="font-bold text-xl mb-2">🚀 CD (Déploiement Continu)</h4>
+            <ul class="text-sm space-y-1">
+              <li>✅ Déploiement auto sur Staging</li>
+              <li>✅ Approbation manuelle pour Prod</li>
+              <li>✅ Rollback possible</li>
+              <li>✅ Monitoring intégré</li>
+            </ul>
+          </div>
+        </div>
+        <p class="text-center mt-6 text-lg font-semibold">
+          🦊 GitLab CI/CD : Une seule plateforme pour tout le cycle DevOps !
         </p>
       </div>
     `
@@ -1047,164 +1640,6 @@ jobs:
             <tr class="border-b"><td class="py-3 px-4 font-bold">Ansible</td><td class="py-3 px-4">Configuration & automatisation</td></tr>
           </tbody>
         </table>
-      </div>
-    `
-  },
-  {
-    id: 'containers',
-    category: 'Outils et Automatisation',
-    title: 'Conteneurisation (Docker)',
-    timing: '1.5h',
-    icon: Box,
-    content: `
-      <h2 class="text-3xl font-bold mb-6 text-indigo-700">Introduction à Docker</h2>
-      
-      <div class="bg-white p-6 rounded-lg shadow-md mb-8 border-l-4 border-blue-500">
-        <h3 class="text-xl font-semibold mb-3 text-gray-800">Docker c’est quoi ?</h3>
-        <p class="mb-4 text-gray-700">
-          Docker est une plateforme qui permet de <strong>Créer, Déployer et Exécuter</strong> des applications dans des conteneurs, de façon rapide et standardisée.
-        </p>
-        <div class="bg-blue-50 p-4 rounded mt-4">
-          <h4 class="font-bold text-blue-800">C’est quoi un conteneur ?</h4>
-          <p class="text-blue-700">Un mini-ordinateur qui contient : ton application + les dépendances + les configurations. Il garantit que l’application fonctionne partout de la même manière.</p>
-        </div>
-      </div>
-
-      <h3 class="text-2xl font-bold mb-4 text-gray-800">Concepts Clés</h3>
-      <div class="grid md:grid-cols-3 gap-4 mb-8">
-        <div class="bg-white p-4 rounded shadow border border-gray-200">
-          <strong class="block text-lg mb-2 text-indigo-600">Image Docker</strong>
-          <p class="text-sm text-gray-600">Un modèle qui contient le code + les dépendances (ex: python:3.11).</p>
-        </div>
-        <div class="bg-white p-4 rounded shadow border border-gray-200">
-          <strong class="block text-lg mb-2 text-indigo-600">Conteneur</strong>
-          <p class="text-sm text-gray-600">Une instance d’une image (l'application qui tourne).</p>
-        </div>
-        <div class="bg-white p-4 rounded shadow border border-gray-200">
-          <strong class="block text-lg mb-2 text-indigo-600">Dockerfile</strong>
-          <p class="text-sm text-gray-600">Le fichier recette pour construire l'image.</p>
-        </div>
-      </div>
-
-      <h3 class="text-2xl font-bold mb-4 text-gray-800">Exemple de Dockerfile</h3>
-      <pre class="bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto mb-8"><code># 1. Utiliser une image python officielle
-FROM python:3.11
-
-# 2. Définir le dossier de travail
-WORKDIR /app
-
-# 3. Copier les fichiers
-COPY requirements.txt .
-RUN pip install -r requirements.txt
-COPY . .
-
-# 4. Exposer le port
-EXPOSE 5000
-
-# 5. Lancer l'application
-CMD ["python", "app.py"]</code></pre>
-
-      <h3 class="text-2xl font-bold mb-4 text-gray-800">Commandes Essentielles</h3>
-      <div class="bg-gray-800 text-gray-200 p-4 rounded-lg font-mono text-sm space-y-2 mb-8">
-        <p><span class="text-green-400"># Construire l'image</span><br>docker build -t mon-app .</p>
-        <p><span class="text-green-400"># Lancer un conteneur</span><br>docker run -d -p 5000:5000 mon-app</p>
-      </div>
-    `
-  },
-  {
-    id: 'devsecops',
-    category: 'Sécurité',
-    title: 'DevSecOps',
-    timing: '1h',
-    icon: Cpu,
-    content: `
-      <h2 class="text-3xl font-bold mb-6 text-indigo-700">DevSecOps & The Security Gate</h2>
-      
-      <div class="bg-white p-6 rounded-lg shadow-md mb-8 border-l-4 border-red-500">
-        <h3 class="text-xl font-semibold mb-3 text-gray-800">Pourquoi DevSecOps ?</h3>
-        <p class="mb-4 text-gray-700">
-          Le DevSecOps n'est pas seulement une méthode, c'est une évolution culturelle du DevOps qui intègre la sécurité comme une responsabilité partagée dès le début du cycle de développement.
-        </p>
-        <p class="font-semibold text-red-700">Objectif : Garantir un déploiement fiable et sécurisé sans ralentir la vitesse de livraison.</p>
-      </div>
-
-      <h3 class="text-2xl font-bold mb-4 text-gray-800">La "Security Gate" (La Porte de Sécurité)</h3>
-      <div class="bg-gray-50 p-6 rounded-lg mb-8">
-        <p class="mb-4 text-gray-700">C'est un point de contrôle automatisé placé dans le pipeline CI/CD :</p>
-        <ul class="space-y-2 mb-4">
-          <li class="flex items-center"><span class="text-green-500 mr-2">✅</span> Si le code est sûr → La porte s'ouvre.</li>
-          <li class="flex items-center"><span class="text-red-500 mr-2">⛔</span> Si vulnérabilité critique → La porte se ferme (Pipeline échoue).</li>
-        </ul>
-        <p class="text-sm text-gray-600"><strong>Outil de choix :</strong> SonarQube.</p>
-      </div>
-
-      <h3 class="text-2xl font-bold mb-4 text-gray-800">Les 3 Piliers de SonarQube</h3>
-      <div class="grid md:grid-cols-3 gap-4 mb-8">
-        <div class="bg-white p-4 rounded shadow border-t-4 border-yellow-500">
-          <h4 class="font-bold text-lg mb-2">🐞 Les Bugs</h4>
-          <p class="text-sm text-gray-600">Anomalies qui provoquent des erreurs (Fiabilité).</p>
-        </div>
-        <div class="bg-white p-4 rounded shadow border-t-4 border-red-500">
-          <h4 class="font-bold text-lg mb-2">🔓 Vulnérabilités</h4>
-          <p class="text-sm text-gray-600">Faiblesses exploitables par des pirates (Sécurité).</p>
-        </div>
-        <div class="bg-white p-4 rounded shadow border-t-4 border-blue-500">
-          <h4 class="font-bold text-lg mb-2">code Code Smells</h4>
-          <p class="text-sm text-gray-600">Code mal écrit, difficile à maintenir (Dette technique).</p>
-        </div>
-      </div>
-
-      <h3 class="text-2xl font-bold mb-4 text-gray-800">Configuration (sonar-project.properties)</h3>
-      <pre class="bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto mb-8"><code># Clé unique du projet
-sonar.projectKey=DevOps_Presentation_Project
-# Nom affiché
-sonar.projectName=Projet DevOps Team
-# Version
-sonar.projectVersion=1.0
-# Sources
-sonar.sources=.</code></pre>
-
-      <h2 class="text-3xl font-bold mb-6 text-indigo-700">La Sécurité des Conteneurs (Container Scanning)</h2>
-      
-      <div class="bg-white p-6 rounded-lg shadow-md mb-8 border-l-4 border-orange-500">
-        <h3 class="text-xl font-semibold mb-3 text-gray-800">Pourquoi scanner le code ne suffit pas ?</h3>
-        <p class="mb-4 text-gray-700">
-          Même si votre code est parfait, si vous utilisez une image de base (ex: <code>node:14</code>) qui contient une faille de sécurité critique dans le système d'exploitation (Linux), les hackers passeront par là.
-        </p>
-        <p class="font-semibold text-orange-700">C'est la sécurité de la "Supply Chain" (Chaîne d'approvisionnement).</p>
-      </div>
-
-      <h3 class="text-2xl font-bold mb-4 text-gray-800">L'Outil : Trivy</h3>
-      <div class="grid md:grid-cols-2 gap-8 mb-8">
-        <div class="bg-gray-50 p-6 rounded-lg">
-          <h4 class="font-bold text-indigo-600 mb-2">Comment ça marche ?</h4>
-          <p class="text-sm text-gray-600 mb-2">
-            Trivy scanne votre image Docker avant le déploiement. Il regarde la liste des paquets installés (OS et dépendances) et la compare à une base de données de vulnérabilités mondiales (CVE - Common Vulnerabilities and Exposures).
-          </p>
-        </div>
-        <div class="bg-gray-50 p-6 rounded-lg">
-          <h4 class="font-bold text-indigo-600 mb-2">La Règle d'Or</h4>
-          <p class="text-sm text-gray-600">
-            Si Trivy trouve une faille classée <strong>"CRITICAL"</strong>, le pipeline CI/CD doit <strong>bloquer le déploiement</strong> immédiatement.
-          </p>
-        </div>
-      </div>
-
-      <h3 class="text-2xl font-bold mb-4 text-gray-800">Exemple d'Intégration CI/CD</h3>
-      <div class="bg-gray-900 text-gray-100 p-4 rounded-lg font-mono text-sm mb-8">
-        <p class="text-gray-400 mb-2"># 1. Scan informatif (ne bloque pas)</p>
-        <p class="mb-4">trivy image my-app:latest</p>
-        
-        <p class="text-gray-400 mb-2"># 2. Scan bloquant (Security Gate)</p>
-        <p class="text-green-400">trivy image --exit-code 1 --severity CRITICAL my-app:latest</p>
-        <p class="text-gray-500 mt-2 text-xs">// Si une faille critique est trouvée, la commande renvoie une erreur (exit 1) et le pipeline s'arrête.</p>
-      </div>
-
-      <div class="bg-indigo-50 p-6 rounded-lg border border-indigo-100">
-        <h3 class="font-bold text-indigo-800 mb-2">Conclusion</h3>
-        <p class="text-indigo-700">
-          L'intégration de SonarQube comme "Security Gate" permet de passer d'une sécurité subjective à une sécurité mesurable et automatisée.
-        </p>
       </div>
     `
   }
