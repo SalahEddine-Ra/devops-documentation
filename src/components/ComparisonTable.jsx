@@ -3,12 +3,11 @@ import { ArrowUpDown } from 'lucide-react';
 
 const ComparisonTable = () => {
   const [data, setData] = useState([
-    { criteria: "Objectif Principal", agile: "Vitesse et flexibilité du développement.", devops: "Qualité et rapidité de la livraison/déploiement.", combined: "Chaîne de valeur continue (Code → Prod)." },
-    { criteria: "Focus", agile: "Collaboration Devs + Clients.", devops: "Collaboration Dev + Ops.", combined: "Global (Dev, Ops, QA, Business)." },
-    { criteria: "Cycle de livraison", agile: "Itératif (Sprints courts).", devops: "Continu (CI/CD, Automation).", combined: "Sprints + CI/CD + Deploy auto." },
-    { criteria: "Outils clés", agile: "Jira, Trello, Git.", devops: "Jenkins, Docker, K8s, Ansible.", combined: "Stack intégrée (Agile + CI/CD)." },
-    { criteria: "Qualité", agile: "Tests manuels, Code review.", devops: "Tests auto, Monitoring continu.", combined: "Qualité vérifiée à chaque étape." },
-    { criteria: "Résultat final", agile: "Produit prêt à livrer.", devops: "Produit livré et stable.", combined: "Produit livré en continu et amélioré." },
+    { criteria: "Nature", agile: "Méthode de gestion et développement.", devops: "Culture + pratiques techniques.", combined: "Développement rapide + livraison rapide." },
+    { criteria: "Pratiques", agile: "Livraisons fréquentes (sprints).", devops: "Automatisation du build, tests et déploiement.", combined: "Sprints + CI/CD + monitoring." },
+    { criteria: "Collaboration", agile: "Collaboration avec le client.", devops: "Unifie développeurs et operations.", combined: "Travail d'équipe global (Dev + Ops + QA + Business)." },
+    { criteria: "Objectif", agile: "Flexibilité et adaptation au changement.", devops: "Déploiement rapide et fiable.", combined: "Une chaîne complète de valeur du backlog → production." },
+    { criteria: "Résultat", agile: "Produit prêt à livrer.", devops: "Produit mis en production en continu.", combined: "Livraison continue et amélioration constante." },
   ]);
 
   const [sortConfig, setSortConfig] = useState({ key: null, direction: 'ascending' });
@@ -40,7 +39,15 @@ const ComparisonTable = () => {
   };
 
   return (
+    
     <div className="overflow-x-auto shadow-lg rounded-lg mb-8">
+      <div className="bg-white p-6 rounded-lg shadow border-l-4 border-purple-600 mb-8">
+        <p className="text-gray-700 text-lg leading-relaxed">Agile et DevOps sont deux approches complémentaires. L’Agilité se concentre sur l’organisation du travail
+           et le développement itératif afin de livrer rapidement des fonctionnalités répondant aux besoins du client. 
+          DevOps prolonge cette démarche en assurant l’automatisation, l’intégration continue et le déploiement
+           rapide et fiable des applications. Ensemble, Agile et DevOps permettent de réduire le temps de mise sur le marché, 
+          d’améliorer la collaboration entre les équipes et de fournir une valeur continue aux utilisateurs.</p>
+    </div>
       <table className="min-w-full bg-white">
         <thead className="bg-gray-800 text-white">
           <tr>
